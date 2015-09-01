@@ -49,7 +49,7 @@
                     <div class="navbar" role="navigation">
                         
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="/_"><img src="<?php bloginfo('template_directory');?>/img/logo.png" alt="Fysio"></a>
+                                <a class="navbar-brand" href="/_"><img src="<?php bloginfo('template_directory');?>/img/logo.png" alt="Fysio" class="img-responsive"></a>
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                     <span class="sr-only">Toggle navigatoin</span>
                                     <span class="icon-bar"></span>

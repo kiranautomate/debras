@@ -78,13 +78,16 @@ h4{
 	background-color: #d87a00;
 	border: 1px solid #d87a00;
 }
+
 a{
 	color:#fff;	
 }
+
 a:hover{
 	text-decoration:none;
 	color:#fff;		
 }
+
 .container{
 	/*max-width:1100px;*/
 }
@@ -101,8 +104,8 @@ ul{
 .col-lg-15 {
     position: relative;
     min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
 }
 .col-xs-15 {
     width: 20%;
@@ -196,13 +199,13 @@ h3{
 	background:rgba(255,255,255,0.7);
 	text-align:center;
 	padding:1.5em 2em;
-	width:1000px;
+	max-width:1000px;
 	position:absolute;
 	top:50%;
 	left:50%;
 	margin-left:-500px;	
 	font-weight:700;
-	font-size:40px;
+	font-size:2em;
 	margin-top:-48px;
 	color:#D87A00;
 }
@@ -239,7 +242,7 @@ h3{
 	margin:1em 0px 2em 0;	
 }
 .servicesContent{
-	width:258px;
+	width:95%;
 	height:290px;	
 }
 .servicesContent .servicesContentTitle{
@@ -255,12 +258,7 @@ h3{
 .carousel-control.left, .carousel-control.right {
 	background-image:none;	
 }
-.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
-    margin-right: -175px;
-}
-.carousel-control .glyphicon-chevron-left, .carousel-control .icon-next {
-    margin-left: -175px;
-}
+
 
 /* === LOCATION SECTION  === */
 #location{
@@ -339,13 +337,21 @@ footer, .footerContent h3{
 	font-size:0.75em;
 }
 
-@media only screen and (max-width:760px){
+@media only screen and (max-width:767px){
 	body{
 		font-size: 15px;
 	}
 }
-@media only screen and (max-width:460px){
+@media only screen and (max-width:459px){
 	body{
 		font-size: 10px;
 	}
+}
+@media only screen and (min-width:968px){
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -175px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-next {
+    margin-left: -175px;
+}
 }
