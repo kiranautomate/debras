@@ -1,0 +1,339 @@
+/* CSS Document */
+/*
+Theme Name: Debras
+Theme URI: http://acedezines.com
+Author: Ace dezines
+Author URI: http://acedezines.com
+Description: This theme is for de bras physio
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+/* CSS Document */
+
+/*COLOR REFERENCES
+
+ORANGE:		#79b044
+SALMON:		#DD5638
+BLUE GRAY:	#3E4249
+
+*/
+
+/* === GENERAL === */
+
+body{
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 20px;
+}
+
+/* === GLOBAL === */
+
+h1,h2,h3,h4,h5,h6{
+	-webkit-font-smoothing: anti-aliasing;
+	text-rendering: optimizelegibility;
+	font-weight: bold;	
+}
+
+h1{
+	font-size: 3em;	
+}
+
+h1,h2{
+	margin: 0 0 40px;	
+}
+
+h3{
+	margin: 20px 0;
+	fon-weight:700;
+	font-size:30px;
+}
+
+h4{
+	font-size: 18px;	
+}
+
+.btn{
+	font-weight: 700;
+	font-size:18px;	
+}
+
+.btn-danger{
+	background-color: #dd5638;
+	border-collapse: #d95131;
+}
+
+.btn-primary{
+	background-color: #b3b3b3;
+	border: 1px solid #b3b3b3;
+}
+
+.btn-warning{
+	background-color: #d87a00;
+	border: 1px solid #d87a00;
+}
+a{
+	color:#fff;	
+}
+a:hover{
+	text-decoration:none;
+	color:#fff;		
+}
+.container{
+	width:1100px;	
+}
+
+ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+/*Five column layout*/
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+/* === GLOBAL COLOR SETTING  === */
+h3{
+	color:#d87a00;
+	font-weight:bold;	
+}	
+/* === Nav Bar CSS === */
+.navbar {
+    background: #fff;
+    min-height: 109px;
+    margin-bottom: 0px;
+}
+.navbar a{
+	font-weight:500;
+	font-size:20px;	
+	color:#000;
+}
+.navbar-right{
+	padding-top:30px;	
+}
+.headerTop{
+	height:50px;
+	background:#E6E6E6;	
+}
+.headerTopLeft{
+	float:left;	
+	font-weight:500;
+	font-size:16px;
+	padding:15px 0 0 0;
+}
+.headerTopLeft a{
+	color: #4D4D4D;	
+}
+.headerTopLeft li, .headerTopRight li{
+	display:block;
+	float:left;	
+	margin-right:16px;
+}
+.headerTopRight{
+	float:right;
+	font-weight:500;
+	font-size:20px;
+	padding:10px 0 0 0;
+}
+.headerTopRight a{
+	color: #D87A00;	
+}
+.headerTopRight .glyphicon{
+	margin-right:14px;
+}
+/* === BANNER === */
+
+#banner{
+	position:relative;
+	-webkit-font-smoothing: anti-aliasing;
+	text-rendering: optimizelegibility;
+	color: white;
+	max-height: 422px;
+}
+#banner img{
+	max-height: 422px;
+	width:100%;
+}
+#banner article{
+	width: 100%;
+	text-align: center;	
+}
+.bannerText{
+	background:rgba(255,255,255,0.7);
+	text-align:center;
+	padding:34px 42px;
+	width:1000px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-500px;	
+	font-weight:700;
+	font-size:40px;
+	margin-top:-48px;
+	color:#D87A00;
+}
+.videoBanner iframe{
+	width:100%;	
+	height: 422px;
+}
+/* === CONTENT SECTION  === */
+#homeContent .container{
+	width:660px;	
+}
+#homeContent{
+	padding:20px 0;
+	text-align:center;	
+	font-weight:500;
+	font-size:20px;
+}
+.homeContentButton{
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+/* === SERVICES SECTION  === */
+#services{
+	background-color:#d87a00;
+	padding:30px 0;
+}
+#services h3{
+	font-weight:700;
+	font-size:26px;
+	color:#fff;
+	text-align:center;
+	margin:20px 0px 40px 0;	
+}
+.servicesContent{
+	width:258px;
+	height:290px;	
+}
+.servicesContent .servicesContentTitle{
+	text-align:center;
+	background:#fff;
+	height:50px;
+}
+.servicesContentTitle{
+	padding: 10px 0;
+	font-weight:500;	
+	font-size:20px;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image:none;	
+}
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -175px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-next {
+    margin-left: -175px;
+}
+
+/* === LOCATION SECTION  === */
+#location{
+	padding:30px 0px;	
+}
+#openingTime{
+	font-weight:700;
+	font-size:16px;	
+}
+#openingTime span{
+	float:right;
+	margin-right:135px;	
+}
+#location h3{
+	font-weight:700;
+	font-size:26px;
+	margin:20px 0px;	
+}
+#openingTime li {
+	background-image: url(img/list-cog.png);
+	background-repeat: no-repeat;
+	background-position: 0 .4em;
+	padding-left: 1.6em;
+}
+#carousel-partners{
+	margin-top:40px;	
+}
+#carousel-partners .carousel-control .glyphicon-chevron-left,#carousel-partners  .carousel-control .glyphicon-chevron-right,#carousel-partners  .carousel-control .icon-next, #carousel-partners  .carousel-control .icon-prev{
+    margin-top: -14px;
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding-top: 3px;
+}
+#carousel-partners .carousel-inner{
+	max-height:110px;	
+}
+
+/* === FOOTER SECTION  === */
+footer, .footerContent h3{
+	position:relative;	
+	color:#fff;
+}
+.footerTop{
+	background:#e09533;
+	height:70px;
+	padding:25px 0;
+	font-weight:700;
+	font-size:20px;
+}
+.footerTop .glyphicon{
+	margin-right:10px;
+}
+.footerContent{
+	background:#d87a00;	
+	padding:40px 0 80px 0;
+}
+.footerContent h3{
+	font-weight:700;
+	font-size:22px;	
+}
+.footerContent a{
+	font-weight:400;
+	font-size:16px;	
+}
+.footerBottom{
+	height:40px;
+	position:absolute;
+	bottom:0px;
+	background:rgba(0,0,0,0.2);
+	width:100%;
+	text-align:center;
+	padding:7px 0;
+	font-weight:400;
+	font-size:15px;
+}
