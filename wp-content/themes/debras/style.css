@@ -242,7 +242,7 @@ h3{
 	margin:1em 0px 2em 0;	
 }
 .servicesContent{
-	width:95%;
+	max-width:258px;
 	height:290px;	
 }
 .servicesContent .servicesContentTitle{

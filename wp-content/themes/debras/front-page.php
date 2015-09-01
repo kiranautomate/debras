@@ -72,25 +72,25 @@
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
                       <div class="row">
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
                             </div>
                         </div>
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
                             </div>
                         </div>
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
                             </div>
                         </div>
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
@@ -100,25 +100,25 @@
                     </div>
                     <div class="item">
                        <div class="row">
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
                             </div>
                         </div>
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
                             </div>
                         </div>
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
                             </div>
                         </div>
-                        <div class="col col-xs-3">
+                        <div class="col col-sm-3 col-xs-6">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
                                 <p class="servicesContentTitle">Behandling 1</p>
@@ -146,13 +146,13 @@
         <section id="location">
         	<div class="container">
                 <div class="row">
-                    <div class="col col-xs-7">
+                    <div class="col col-sm-7">
                         <h3>Locatie en route planner</h3>
                         <section class="locationMap">
                         	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60896.85431750921!2d78.51391505!3d17.4571583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1441102683963" width="100%" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </section>
                     </div>
-                    <div class="col col-xs-5" id="openingTime">
+                    <div class="col col-sm-5" id="openingTime">
                     	<h3>Onze openingstijden</h3>
                         <ul>
                         	<li>Monday<span>08:00</span></li>
@@ -175,27 +175,27 @@
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
                       <div class="row">
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-						<div class="col col-xs-15">
+						<div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
@@ -204,27 +204,27 @@
                     </div>
                     <div class="item">
                       <div class="row">
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-						<div class="col col-xs-15">
+						<div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
                         </div>
-                        <div class="col col-xs-15">
+                        <div class="col col-sm-15 col-xs-4">
                             <div class="servicesContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
                             </div>
