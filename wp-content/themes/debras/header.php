@@ -45,34 +45,34 @@
         	============================== -->
             <div class="navbar-wrapper">
             	
-                <div class="navbar" role="navigation">
-                	
-                    <div class="container">
-                    	<div class="navbar-header">
-                        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            	<span class="sr-only">Toggle navigatoin</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="/_"><img src="<?php bloginfo('template_directory');?>/img/logo.png" alt="Fysio"></a>
-                        </div><!-- navbar-header -->
-                        <div class="collapse navbar-collapse">
-							  <?php
-                                $args = array(
-                                    'menu' => 'header-menu',
-                                    'menu_class' => 'nav navbar-nav navbar-right',
-                                    'conatiner' => 'false'
-                                );
-                              
-                              wp_nav_menu( $args );
-                              
-                              ?>
-                        </div><!-- navbar-collapse -->
-                    </div><!-- container -->
-                    
-                </div><!-- navbar -->
-                
+                <div class="container">
+                    <div class="navbar" role="navigation">
+                        
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="/_"><img src="<?php bloginfo('template_directory');?>/img/logo.png" alt="Fysio"></a>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigatoin</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div><!-- navbar-header -->
+                            <div class="collapse navbar-collapse">
+                                  <?php
+                                    $args = array(
+                                        'menu' => 'header-menu',
+                                        'menu_class' => 'nav navbar-nav navbar-right',
+                                        'conatiner' => 'false'
+                                    );
+                                  
+                                  wp_nav_menu( $args );
+                                  
+                                  ?>
+                            </div><!-- navbar-collapse -->
+                        
+                        
+                    </div><!-- navbar -->
+                </div><!-- container -->
             </div><!-- navbar-wrapper -->
         
         </header>    

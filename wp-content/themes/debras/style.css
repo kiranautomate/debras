@@ -46,22 +46,22 @@ h1{
 }
 
 h1,h2{
-	margin: 0 0 40px;	
+	margin: 0 0 2em;	
 }
 
 h3{
-	margin: 20px 0;
+	margin: 1em 0;
 	fon-weight:700;
-	font-size:30px;
+	font-size:1.5em;
 }
 
 h4{
-	font-size: 18px;	
+	font-size: 0.9em;	
 }
 
 .btn{
 	font-weight: 700;
-	font-size:18px;	
+	font-size:0.9em;	
 }
 
 .btn-danger{
@@ -86,7 +86,7 @@ a:hover{
 	color:#fff;		
 }
 .container{
-	width:1100px;	
+	/*max-width:1100px;*/
 }
 
 ul{
@@ -139,11 +139,11 @@ h3{
 }
 .navbar a{
 	font-weight:500;
-	font-size:20px;	
+	font-size:1em;	
 	color:#000;
 }
 .navbar-right{
-	padding-top:30px;	
+	padding-top:1.5em;	
 }
 .headerTop{
 	height:50px;
@@ -152,7 +152,7 @@ h3{
 .headerTopLeft{
 	float:left;	
 	font-weight:500;
-	font-size:16px;
+	font-size:0.8em;
 	padding:15px 0 0 0;
 }
 .headerTopLeft a{
@@ -161,19 +161,19 @@ h3{
 .headerTopLeft li, .headerTopRight li{
 	display:block;
 	float:left;	
-	margin-right:16px;
+	margin-right:0.8em;
 }
 .headerTopRight{
 	float:right;
 	font-weight:500;
-	font-size:20px;
+	font-size:1em;
 	padding:10px 0 0 0;
 }
 .headerTopRight a{
 	color: #D87A00;	
 }
 .headerTopRight .glyphicon{
-	margin-right:14px;
+	margin-right:0.7em;
 }
 /* === BANNER === */
 
@@ -195,7 +195,7 @@ h3{
 .bannerText{
 	background:rgba(255,255,255,0.7);
 	text-align:center;
-	padding:34px 42px;
+	padding:1.5em 2em;
 	width:1000px;
 	position:absolute;
 	top:50%;
@@ -212,30 +212,31 @@ h3{
 }
 /* === CONTENT SECTION  === */
 #homeContent .container{
-	width:660px;	
+	max-width:660px;
+	width:auto;	
 }
 #homeContent{
-	padding:20px 0;
+	padding:1em 0;
 	text-align:center;	
 	font-weight:500;
-	font-size:20px;
+	font-size:1em;
 }
 .homeContentButton{
-	margin-top:25px;
-	margin-bottom:25px;
+	margin-top:1.25em;
+	margin-bottom:1.25em;
 }
 
 /* === SERVICES SECTION  === */
 #services{
 	background-color:#d87a00;
-	padding:30px 0;
+	padding:1.5em 0;
 }
 #services h3{
 	font-weight:700;
-	font-size:26px;
+	font-size:1.3em;
 	color:#fff;
 	text-align:center;
-	margin:20px 0px 40px 0;	
+	margin:1em 0px 2em 0;	
 }
 .servicesContent{
 	width:258px;
@@ -247,9 +248,9 @@ h3{
 	height:50px;
 }
 .servicesContentTitle{
-	padding: 10px 0;
+	padding: 0.5em 0;
 	font-weight:500;	
-	font-size:20px;
+	font-size:1em;
 }
 .carousel-control.left, .carousel-control.right {
 	background-image:none;	
@@ -263,11 +264,11 @@ h3{
 
 /* === LOCATION SECTION  === */
 #location{
-	padding:30px 0px;	
+	padding:1.5em 0px;	
 }
 #openingTime{
 	font-weight:700;
-	font-size:16px;	
+	font-size:0.8em;	
 }
 #openingTime span{
 	float:right;
@@ -275,8 +276,8 @@ h3{
 }
 #location h3{
 	font-weight:700;
-	font-size:26px;
-	margin:20px 0px;	
+	font-size:1.3em;
+	margin:1em 0px;	
 }
 #openingTime li {
 	background-image: url(img/list-cog.png);
@@ -285,14 +286,14 @@ h3{
 	padding-left: 1.6em;
 }
 #carousel-partners{
-	margin-top:40px;	
+	margin-top:2em;	
 }
 #carousel-partners .carousel-control .glyphicon-chevron-left,#carousel-partners  .carousel-control .glyphicon-chevron-right,#carousel-partners  .carousel-control .icon-next, #carousel-partners  .carousel-control .icon-prev{
-    margin-top: -14px;
+    margin-top: -0.7em;
     background-color: #ddd;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 2em;
+    height: 2em;
     padding-top: 3px;
 }
 #carousel-partners .carousel-inner{
@@ -307,27 +308,27 @@ footer, .footerContent h3{
 .footerTop{
 	background:#e09533;
 	height:70px;
-	padding:25px 0;
+	padding:1.25em 0;
 	font-weight:700;
-	font-size:20px;
+	font-size:1em;
 }
 .footerTop .glyphicon{
-	margin-right:10px;
+	margin-right:0.5em;
 }
 .footerContent{
 	background:#d87a00;	
-	padding:40px 0 80px 0;
+	padding:2em 0 4em 0;
 }
 .footerContent h3{
 	font-weight:700;
-	font-size:22px;	
+	font-size:1.1em;	
 }
 .footerContent a{
 	font-weight:400;
-	font-size:16px;	
+	font-size:0.8em;	
 }
 .footerBottom{
-	height:40px;
+	height:2em;
 	position:absolute;
 	bottom:0px;
 	background:rgba(0,0,0,0.2);
@@ -335,5 +336,16 @@ footer, .footerContent h3{
 	text-align:center;
 	padding:7px 0;
 	font-weight:400;
-	font-size:15px;
+	font-size:0.75em;
+}
+
+@media only screen and (max-width:760px){
+	body{
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width:460px){
+	body{
+		font-size: 10px;
+	}
 }
