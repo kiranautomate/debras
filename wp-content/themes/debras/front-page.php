@@ -29,12 +29,9 @@
                     <div class="videoBanner"><?php var_dump($video); echo $video['textarea']; ?></div>
 				
 				<?php endif; ?>
-                
-                <div class="container clearfix">
                 	
                     <div class="bannerText">Fysiotherapie en Manuele Therapie De Bras</div>
-                    
-                </div><!-- container -->
+
                 
         		<?php endwhile; endif; ?>
             </article>

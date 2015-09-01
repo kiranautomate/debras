@@ -349,9 +349,9 @@ footer, .footerContent h3{
 }
 @media only screen and (min-width:968px){
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
-    margin-right: -175px;
+    margin-right: -125px;
 }
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-next {
-    margin-left: -175px;
+    margin-left: -125px;
 }
 }

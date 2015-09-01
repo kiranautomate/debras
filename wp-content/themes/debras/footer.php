@@ -5,13 +5,13 @@
         	<div class="footerTop">
             	<div class="container">
                 	<div class="row">
-                    	<div class="col col-sm-4">
+                    	<div class="col col-xs-4">
                         	<a href="#"><span class="glyphicon glyphicon-earphone"></span>Bel 070 - 4151565</a>
                         </div>
-                        <div class="col col-sm-4">
+                        <div class="col col-xs-4">
                             <a href="#"><span class="glyphicon glyphicon-envelope"></span>info@fysiodebras.nl</a>
                         </div>
-                        <div class="col col-sm-4">
+                        <div class="col col-xs-4">
                             <a href="#"><span class="glyphicon glyphicon-calendar"></span>Afspraak maken</a>
                         </div>
                     </div>
