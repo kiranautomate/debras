@@ -165,6 +165,119 @@ function wpt_register_theme_customizer( $wp_customize ) {
             )
         )
    );
+
+  // Add H1 Style Settings
+  $wp_customize->add_section( 'h1_styles' , array(
+    'title'      => __('H1 Styles','wptthemecustomizer'), 
+    'panel'      => 'design_settings',
+    'priority'   => 100    
+  ) );  
+  $wp_customize->add_setting(
+      'wpt_h1_color',
+      array(
+          'default'         => '#D87A00',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_h1_color',
+           array(
+               'label'      => __( 'Color', 'wptthemecustomizer' ),
+               'section'    => 'h1_styles',
+               'settings'   => 'wpt_h1_color' 
+           )
+       )
+   ); 
+  $wp_customize->add_setting(
+      'wpt_h1_font_size',
+      array(
+          'default'         => '26px',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_h1_font_size',
+            array(
+                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h1_styles',
+                'settings'       => 'wpt_h1_font_size',
+                'type'           => 'select',
+                'choices'        => array(
+                  '16px'   => '16px',
+				  '18px'   => '18px',
+				  '20px'   => '20px',
+				  '22px'   => '22px',
+				  '24px'   => '24px',
+				  '26px'   => '26px',
+                  '28px'   => '28px',
+                  '32px'   => '32px',
+				  '38px'   => '38px',
+                  '42px'   => '42px',
+				  '46px'   => '46px',
+                )
+            )
+        )       
+   );   
+
+  // Add H3 Style Settings
+  $wp_customize->add_section( 'h2_styles' , array(
+    'title'      => __('H2 Styles','wptthemecustomizer'), 
+    'panel'      => 'design_settings',
+    'priority'   => 100    
+  ) );  
+  $wp_customize->add_setting(
+      'wpt_h2_color',
+      array(
+          'default'         => '#D87A00',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_h2_color',
+           array(
+               'label'      => __( 'Color', 'wptthemecustomizer' ),
+               'section'    => 'h2_styles',
+               'settings'   => 'wpt_h2_color' 
+           )
+       )
+   ); 
+  $wp_customize->add_setting(
+      'wpt_h2_font_size',
+      array(
+          'default'         => '24px',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_h2_font_size',
+            array(
+                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h2_styles',
+                'settings'       => 'wpt_h2_font_size',
+                'type'           => 'select',
+                'choices'        => array(
+                  '16px'   => '16px',
+				  '18px'   => '18px',
+				  '20px'   => '20px',
+				  '22px'   => '22px',
+				  '24px'   => '24px',
+                  '28px'   => '28px',
+                  '32px'   => '32px',
+				  '38px'   => '38px',
+                  '42px'   => '42px',
+				  '46px'   => '46px',
+                )
+            )
+        )       
+   );   
    
   // Add H3 Style Settings
   $wp_customize->add_section( 'h3_styles' , array(
@@ -193,7 +306,7 @@ function wpt_register_theme_customizer( $wp_customize ) {
   $wp_customize->add_setting(
       'wpt_h3_font_size',
       array(
-          'default'         => '24px',
+          'default'         => '22px',
           'transport'       => 'postMessage'
       )
   );
@@ -207,14 +320,188 @@ function wpt_register_theme_customizer( $wp_customize ) {
                 'settings'       => 'wpt_h3_font_size',
                 'type'           => 'select',
                 'choices'        => array(
-                  '22px'   => '22px',
+                  '16px'   => '16px',
+				  '18px'   => '18px',
+				  '20px'   => '20px',
+				  '22px'   => '22px',
+				  '24px'   => '24px',
                   '28px'   => '28px',
                   '32px'   => '32px',
-                  '42px'   => '42px'
+				  '38px'   => '38px',
+                  '42px'   => '42px',
+				  '46px'   => '46px',
                 )
             )
         )       
    );   
+
+  // Add H4 Style Settings
+  $wp_customize->add_section( 'h4_styles' , array(
+    'title'      => __('H4 Styles','wptthemecustomizer'), 
+    'panel'      => 'design_settings',
+    'priority'   => 100    
+  ) );  
+  $wp_customize->add_setting(
+      'wpt_h4_color',
+      array(
+          'default'         => '#D87A00',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_h4_color',
+           array(
+               'label'      => __( 'Color', 'wptthemecustomizer' ),
+               'section'    => 'h4_styles',
+               'settings'   => 'wpt_h4_color' 
+           )
+       )
+   ); 
+  $wp_customize->add_setting(
+      'wpt_h4_font_size',
+      array(
+          'default'         => '20px',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_h4_font_size',
+            array(
+                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h4_styles',
+                'settings'       => 'wpt_h4_font_size',
+                'type'           => 'select',
+                'choices'        => array(
+                  '16px'   => '16px',
+				  '18px'   => '18px',
+				  '20px'   => '20px',
+				  '22px'   => '22px',
+				  '24px'   => '24px',
+                  '28px'   => '28px',
+                  '32px'   => '32px',
+				  '38px'   => '38px',
+                  '42px'   => '42px',
+				  '46px'   => '46px',
+                )
+            )
+        )       
+   );   
+
+  // Add H5 Style Settings
+  $wp_customize->add_section( 'h5_styles' , array(
+    'title'      => __('H5 Styles','wptthemecustomizer'), 
+    'panel'      => 'design_settings',
+    'priority'   => 100    
+  ) );  
+  $wp_customize->add_setting(
+      'wpt_h5_color',
+      array(
+          'default'         => '#D87A00',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_h5_color',
+           array(
+               'label'      => __( 'Color', 'wptthemecustomizer' ),
+               'section'    => 'h5_styles',
+               'settings'   => 'wpt_h5_color' 
+           )
+       )
+   ); 
+  $wp_customize->add_setting(
+      'wpt_h5_font_size',
+      array(
+          'default'         => '18px',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_h5_font_size',
+            array(
+                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h5_styles',
+                'settings'       => 'wpt_h5_font_size',
+                'type'           => 'select',
+                'choices'        => array(
+                  '16px'   => '16px',
+				  '18px'   => '18px',
+				  '20px'   => '20px',
+				  '22px'   => '22px',
+				  '24px'   => '24px',
+                  '28px'   => '28px',
+                  '32px'   => '32px',
+				  '38px'   => '38px',
+                  '42px'   => '42px',
+				  '46px'   => '46px',
+                )
+            )
+        )       
+   );   
+   
+  // Add H6 Style Settings
+  $wp_customize->add_section( 'h6_styles' , array(
+    'title'      => __('H6 Styles','wptthemecustomizer'), 
+    'panel'      => 'design_settings',
+    'priority'   => 100    
+  ) );  
+  $wp_customize->add_setting(
+      'wpt_h6_color',
+      array(
+          'default'         => '#D87A00',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_h6_color',
+           array(
+               'label'      => __( 'Color', 'wptthemecustomizer' ),
+               'section'    => 'h6_styles',
+               'settings'   => 'wpt_h6_color' 
+           )
+       )
+   ); 
+  $wp_customize->add_setting(
+      'wpt_h6_font_size',
+      array(
+          'default'         => '16px',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'custom_h6_font_size',
+            array(
+                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h6_styles',
+                'settings'       => 'wpt_h6_font_size',
+                'type'           => 'select',
+                'choices'        => array(
+                  '16px'   => '16px',
+				  '18px'   => '18px',
+				  '20px'   => '20px',
+				  '22px'   => '22px',
+				  '24px'   => '24px',
+                  '28px'   => '28px',
+                  '32px'   => '32px',
+				  '38px'   => '38px',
+                  '42px'   => '42px',
+				  '46px'   => '46px',
+                )
+            )
+        )       
+   );      
 	
 }
 
@@ -277,14 +564,46 @@ function wpt_style_header() {
   ?>
   
   <style type="text/css">
- 
+  h1 {
+    font-size: <?php echo get_theme_mod('wpt_h1_font_size'); ?>;
+  }
+  h1{
+    color: <?php echo get_theme_mod('wpt_h1_color'); ?> ;
+  }   
+  h2 {
+    font-size: <?php echo get_theme_mod('wpt_h2_font_size'); ?>;
+  }
+  h2{
+    color: <?php echo get_theme_mod('wpt_h2_color'); ?> ;
+  }  
   h3 {
-    font-size: <?php echo get_theme_mod('wpt_h3_font_size'); ?> !important;
+    font-size: <?php echo get_theme_mod('wpt_h3_font_size'); ?>;
   }
   h3{
-    color: <?php echo get_theme_mod('wpt_h3_color'); ?> !important;
+    color: <?php echo get_theme_mod('wpt_h3_color'); ?> ;
   }
 
+  h4 {
+    font-size: <?php echo get_theme_mod('wpt_h4_font_size'); ?>;
+  }
+  h4{
+    color: <?php echo get_theme_mod('wpt_h4_color'); ?> ;
+  }
+  
+  h5 {
+    font-size: <?php echo get_theme_mod('wpt_h5_font_size'); ?>;
+  }
+  h5{
+    color: <?php echo get_theme_mod('wpt_h5_color'); ?> ;
+  }
+  
+  h6 {
+    font-size: <?php echo get_theme_mod('wpt_h6_font_size'); ?>;
+  }
+  h6{
+    color: <?php echo get_theme_mod('wpt_h6_color'); ?> ;
+  }
+       
   </style>
   <?php 
 
@@ -311,25 +630,6 @@ array( "name" => $themename." Options",
     "type" => "title"),
   
  
-array( "name" => "General",
-    "type" => "section"),
-array( "type" => "open"),
-
-array( "name" => "Logo URL",
-    "desc" => "Enter the link to your logo image",
-    "id" => $shortname."_logo",
-    "type" => "text",
-    "std" => ""),
- 
-array( "name" => "Colour Scheme",
-    "desc" => "Select the colour scheme for the theme",
-    "id" => $shortname."_color_scheme",
-    "type" => "select",
-    "options" => array("blue", "red", "green"),
-    "std" => "blue"),
-
-
-array( "type" => "close"),
 array( "name" => "Banner",
     "type" => "section"),
 array( "type" => "open"),

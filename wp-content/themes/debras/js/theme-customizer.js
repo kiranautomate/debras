@@ -54,7 +54,31 @@
         } );
     });    
 
-    wp.customize( 'wpt_h3_color', function( value ) {
+    wp.customize( 'wpt_h1_color', function( value ) {
+        value.bind( function( to ) {
+            $( 'h1' ).css( 'color', to );
+        } );
+    });
+
+    wp.customize( 'wpt_h1_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( 'h1' ).css( 'font-size', to );            
+        } );
+    });     
+
+	wp.customize( 'wpt_h2_color', function( value ) {
+        value.bind( function( to ) {
+            $( 'h2' ).css( 'color', to );
+        } );
+    });
+
+    wp.customize( 'wpt_h2_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( 'h2' ).css( 'font-size', to );            
+        } );
+    }); 
+	
+	wp.customize( 'wpt_h3_color', function( value ) {
         value.bind( function( to ) {
             $( 'h3' ).css( 'color', to );
         } );
@@ -62,8 +86,43 @@
 
     wp.customize( 'wpt_h3_font_size', function( value ) {
         value.bind( function( to ) {            
-            $( 'h3' ).css( 'font-size', to + 'px' );            
+            $( 'h3' ).css( 'font-size', to );            
         } );
-    });     
+    });    
+	
+	wp.customize( 'wpt_h4_color', function( value ) {
+        value.bind( function( to ) {
+            $( 'h4' ).css( 'color', to );
+        } );
+    });
 
+    wp.customize( 'wpt_h4_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( 'h4' ).css( 'font-size', to );            
+        } );
+    }); 
+	
+	wp.customize( 'wpt_h5_color', function( value ) {
+        value.bind( function( to ) {
+            $( 'h5' ).css( 'color', to );
+        } );
+    });
+
+    wp.customize( 'wpt_h5_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( 'h5' ).css( 'font-size', to );            
+        } );
+    });    
+	
+	wp.customize( 'wpt_h6_color', function( value ) {
+        value.bind( function( to ) {
+            $( 'h6' ).css( 'color', to );
+        } );
+    });
+
+    wp.customize( 'wpt_h6_font_size', function( value ) {
+        value.bind( function( to ) {            
+            $( 'h6' ).css( 'font-size', to );            
+        } );
+    });          
 })( jQuery );

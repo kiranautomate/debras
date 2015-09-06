@@ -40,22 +40,19 @@ h1{
 h3{
 	margin: 1em 0;
 	fon-weight:700;
-	font-size:1.5em;
+	font-size:22px;
 }
 
 h4{
 	font-size: 20px;
-	color:#d87a00;
 	margin-top:20px;
 	margin-bottom:20px;
 }
 h5{
 	font-size:18px;	
-	color:#d87a00;
 }
 h6{
 	font-size:16px;
-	color:#d87a00;
 }
 p{
 	font-weight:400;
@@ -89,11 +86,6 @@ a:hover, a:active, a:focus{
 	text-decoration:none;
 	color:#fff;		
 }
-
-.container{
-	/*max-width:1100px;*/
-}
-
 ul{
     list-style: none;
     padding:0;
@@ -156,7 +148,7 @@ input[placeholder] {
 }
 /* === GLOBAL COLOR SETTING  === */
 
-h1,h3{
+h1,h2,h3,h4,h5,h6{
 	color:#d87a00;
 	font-weight:bold;	
 }	
@@ -322,7 +314,6 @@ h1,h3{
 }
 #services h3{
 	font-weight:700;
-	font-size:1.3em;
 	color:#fff !important;
 	text-align:center;
 	margin:1em 0px 2em 0;	
@@ -370,7 +361,6 @@ h1,h3{
 }
 #location h3{
 	font-weight:700;
-	font-size:1.3em;
 	margin:1em 0px;	
 }
 #openingTime li {
@@ -417,8 +407,7 @@ footer, .footerContent h3{
 	padding:2em 0 4em 0;
 }
 .footerContent h3{
-	font-weight:700;
-	font-size:1.1em;	
+	font-weight:700;	
 }
 .footerContent a, .footerContent p{
 	font-weight:400;
