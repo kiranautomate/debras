@@ -48,7 +48,8 @@
         <!-- SERVICES LIST SECTION 
         ============================== -->
         <section id="listServices">
-        	<div class="container">
+        	
+            <div class="container">
                 
                 <nav class="navbar navbar-default projectsNavbar">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -66,14 +67,17 @@
                       
 					  <?php
 					  
-						$args=array(
+						$taxonomies =array(
 							'name' => 'project-type'
 						  );
 					  
-						$categories = get_terms( $args ); ?>
-						
+						$categories = get_terms( $taxonomies ); ?>
+                       
+                       
+                        
 						<ul id="category-menu" class="nav navbar-nav">
-							<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+							
+                            <li class="active" ><a class="ajax" onclick="cat_ajax_get('<?php echo implode( ',' , get_terms( 'project-type', 'orderby=count&hide_empty=0&fields=ids')); ?>');">All projects <span class="sr-only">(current)</span></a></li>
 							<?php foreach ( $categories as $cat ) { ?>
 							<li id="cat-<?php echo $cat->term_id; ?>"><a class="<?php echo $cat->slug; ?> ajax" onclick="cat_ajax_get('<?php echo $cat->term_id; ?>');"><?php echo $cat->name; ?></a></li>
 						
@@ -83,8 +87,8 @@
                     </div><!-- /.navbar-collapse -->
                 </nav>
 
-
-                <div class="row">
+				
+                <div class="row" id ="category-post-content">
                 	<?php 
                             $args = array( 'post_type' => 'projects');
                             $the_query = new WP_Query( $args );
@@ -118,7 +122,7 @@
                                 </div>
                             </div>
                             
-						<?php echo $projects_count = $projects_count +1; ?>
+						<?php $projects_count = $projects_count +1; ?>
                         <?php if($projects_count % 3 == 0) :  ?>
                             
                             
@@ -129,14 +133,16 @@
                         <?php endif; ?>      
                         
                         <?php endwhile; endif; ?>
+                        
+						<?php wp_reset_query(); ?>
         
                       </div><!-- Row -->
 
-                </div>        	
-            </div>
+                </div><!-- container -->        	
+            
         </section>
         
         <div id="loading-animation" style="display: none;"><img src="<?php echo admin_url ( 'images/loading.gif' ); ?>"/></div>
-					  <div id="category-post-content"></div>
+					 
                       
 <?php get_footer(); ?>      

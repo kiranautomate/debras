@@ -784,35 +784,63 @@ add_action( 'wp_ajax_load-filter', 'prefix_load_cat_posts' );
 
 function prefix_load_cat_posts () {
     
-	$cat_id = $_POST[ 'cat' ];
+	$cat_id = explode(',' , $_POST[ 'cat' ]);
     
-$args = array(
+ $args = array(
 	'post_type' => 'projects',
+	'post_status' => 'publish',
 	'tax_query' => array(
 		array(
 			'taxonomy' => 'project-type',
 			'field'    => 'term_id',
-			'terms'    => array( $cat_id )
+			'terms'    =>  $cat_id 
 		),
 	),
-);
+ );
+ 
 
 
     $posts = get_posts( $args );
 
     ob_start ();?>
-	<pre><?php var_dump($posts); ?></pre><?php
-    foreach ( $posts as $post ) {
-    setup_postdata( $post ); ?>
+	<?php
 	
-    <div id="post-<?php echo $post->ID; ?> <?php post_class(); ?>">
-        <h1 class="posttitle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-        <div id="post-content">
-        <?php the_excerpt(); ?>
+	$projects_count = 0;
+	
+    foreach ( $posts as $post ) {
+    setup_postdata( $post ); 
+	
+	$project_image = get_the_post_thumbnail( $post ->ID );
+	
+	if( !empty($project_image)):
+	?>
+	
+    <div class="col col-sm-4 col-xs-12" id="post-<?php echo $post->ID; ?>">
+        <div class="lgThumbnailContent">
+            
+            <?php echo $project_image; ?>
+            
+            <div class="lgThumbnailContentTitle">
+                
+                <h6 ><a href="<?php echo get_permalink( $post ->ID ); ?>" ><?php echo get_the_title( $post ->ID ); ?></a></h6>
+                    
+            </div>
+            
+            <div class="thumbHighlightText">
+                <h6><?php the_terms( $post->ID, 'project-type', ' ', ', ', ' ' ); ?></h6>
+            </div>
+            
         </div>
-
-   </div>
+    </div>
+   
+   <?php $projects_count = $projects_count +1; ?>
+	
+	<?php if($projects_count % 3 == 0) :  ?>
+        
+        
+      </div><div class="row">
+        
+    <?php endif; endif; ?>
 
    <?php } wp_reset_postdata();
 

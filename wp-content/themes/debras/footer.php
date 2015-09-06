@@ -176,7 +176,6 @@
                 url: ajaxurl,
                 data: {"action": "load-filter", cat: catID },
                 success: function(response) {
-                    alert(response);
 					jQuery("#category-post-content").html(response);
                     jQuery("#loading-animation").hide();
                     return false;
