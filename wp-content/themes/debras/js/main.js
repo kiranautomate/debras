@@ -1,12 +1,22 @@
-// JavaScript Document
-//select the first iframe that has a src that links to youtube
-var firstIframe = document.querySelector('iframe[src^="//www.youtube"]');
+  jQuery(window).load(function() {
+  // The slider being synced must be initialized first
+  jQuery('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 210,
+    itemMargin: 5,
+    asNavFor: '#slider'
+  });
+ 
+  jQuery('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel"
+  });
+});
 
-//get the current source
-var src = firstIframe.src;
 
-//update the src with "autoplay=1"
-var newSrc = src+'?autoplay=1';
-
-//change iframe's src
-firstIframe.src = newSrc;

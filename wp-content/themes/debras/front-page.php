@@ -3,59 +3,156 @@
         <!-- BANNER 
         ============================== -->
         <section id="banner">
-        	<article>
+        	
+            <?php if($device != 'mobile'){?>
             
-				<?php 
-                      $args = array( 'post_type' => 'banners');
-                      $the_query = new WP_Query( $args );
-                ?>
-                <?php if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); ?>
-        		
-				<?php
+            <article>
+            
+				<?php if( get_option('db_banner_image') != "" && get_option('db_banner_video') == "" ): ?>
 				
-				$image = get_field('banner_image');
+					<img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
 				
-				$video = get_field('background_video');
+				<?php endif; ?>
+                
+                <?php if( get_option('db_banner_image') == "" && get_option('db_banner_video') == "" ): ?>
 				
-				if( !empty($image) && empty($video) ): ?>
-				
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive" />
+					<img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
 				
 				<?php endif; ?>
                 
                 <?php
-                if( !empty($video) ): ?>
+                if( get_option('db_banner_video') != "" ): ?>
 					
-                    <div class="videoBanner"><?php var_dump($video); echo $video['textarea']; ?></div>
+                    <div class="videoBanner">
+                    
+                    
+                    <iframe width="560" height="315" src="<?php echo stripslashes(get_option('db_banner_video')); ?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
+                    
+                    
+                    
+					</div>
 				
 				<?php endif; ?>
-                	
-                    <div class="bannerText">Fysiotherapie en Manuele Therapie De Bras</div>
-
                 
-        		<?php endwhile; endif; ?>
+                <?php
+                if( get_option('db_banner_title') != "" ): ?>
+                	
+                    <div class="bannerText"><section id="bannerTitle"><?php echo get_option('db_banner_title'); ?></section></div>
+                    
+                <?php endif; ?>
+
             </article>
+            
+            <?php }
+            elseif($device == 'mobile'){ ?>
+            
+            <article>
+            
+				<?php if( get_option('db_banner_image') != "" ): ?>
+				
+					<img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
+				
+				<?php endif; ?>
+                
+                <?php if( get_option('db_banner_image') == "" ): ?>
+				
+					<img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
+				
+				<?php endif; ?>
+                
+                <?php
+                if( get_option('db_banner_title') != "" ): ?>
+                	
+                    <div class="bannerText"><section id="bannerTitle"><?php echo get_option('db_banner_title'); ?></section></div>
+                    
+                <?php endif; ?>
+
+            </article>
+            <?php
+            }
+			?>
         </section>
     
         <!-- CONTENT SECTION 
         ============================== -->
         <section id="homeContent">
-        	<div class="container">
-                <h3 class="homeContentTitle">
-                    Dé praktijk voor fysiotherapie en manuele therapie in Den Haag en omstreken.
-                </h3>
+        	
+            <!-- FIRST CONTENT BLOCK -->
+            
+            <?php if( get_option('db_home_content_body_primary') != "" ): ?>
+            
+            <div class="container">
+                
+                <?php if( get_option('db_home_content_title_primary') != "" ): ?>
+                
+                <h1 class="homeContentTitle">
+                    <?php echo get_option('db_home_content_title_primary'); ?>
+                </h1>
+                
+                <?php endif; ?>
+                
                 <div class="homeContentText">
-                    DDoor beweging bepalen we op verschillende manieren de kwaliteit van ons leven.
-                    Fysiotherapeuten zijn deskundig op het gebied van het bewegingsapparaat. Wij
-                    kunnen u informeren, adviseren, begeleiden en behandelen bij klachten van dit
-                    bewegingsapparaat. Ook kunnen wij u helpen gezondheidsproblemen door beweging
-                    te voorkomen door u te begeleiden bij het opbouwen van een actief levenspatroon.
+                    <?php echo get_option('db_home_content_body_primary'); ?>
                 </div>
+                
                 <div class="homeContentButton">
-                    <input type="button" value="Onze deletion" class="btn btn-md btn-primary">
-                    <input type="button" value="Onze deletion" class="btn btn-md btn-warning">
-                </div>            	
+                
+                	<?php if( get_option('db_home_content_button1_primary') != "" ): ?>
+                    
+                    <input type="button" value="<?php echo get_option('db_home_content_button1_primary'); ?>" class="btn btn-md btn-primary">
+                    
+                    <?php endif; ?>
+                    
+                    <?php if( get_option('db_home_content_button2_primary') != "" ): ?>
+                    
+                    <input type="button" value="<?php echo get_option('db_home_content_button2_primary'); ?>" class="btn btn-md btn-warning">
+                    
+                    <?php endif; ?>
+                    
+                </div>
+                            	
             </div>
+            
+            <?php endif; ?>
+
+			<!-- SECOND CONTENT BLOCK -->
+
+            <?php if( get_option('db_home_content_body_secondary') != "" ): ?>
+            
+            <div class="container">
+                
+                <?php if( get_option('db_home_content_title_secondary') != "" ): ?>
+                
+                <h1 class="homeContentTitle">
+                    <?php echo get_option('db_home_content_title_secondary'); ?>
+                </h1>
+                
+                <?php endif; ?>
+                
+                <div class="homeContentText">
+                    <?php echo get_option('db_home_content_body_secondary'); ?>
+                </div>
+                
+                <div class="homeContentButton">
+                
+                	<?php if( get_option('db_home_content_button1_secondary') != "" ): ?>
+                    
+                    <input type="button" value="<?php echo get_option('db_home_content_button1_secondary'); ?>" class="btn btn-md btn-primary">
+                    
+                    <?php endif; ?>
+                    
+                    <?php if( get_option('db_home_content_button2_secondary') != "" ): ?>
+                    
+                    <input type="button" value="<?php echo get_option('db_home_content_button2_secondary'); ?>" class="btn btn-md btn-warning">
+                    
+                    <?php endif; ?>
+                    
+                </div>
+                            	
+            </div>
+            
+            <?php endif; ?>
+                        
         </section>
         
         <!-- SERVICES 
@@ -64,67 +161,61 @@
         	<div class="container">
                 <h3>Onze diensten</h3>
                 <div id="carousel-services" class="carousel slide" data-ride="carousel">
+
                 
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
-                    <div class="item active">
+                      
+					  <?php 
+                            $args = array( 'post_type' => 'services');
+                            $the_query = new WP_Query( $args );
+							
+							$services_count = 0;
+                      ?>
+                      <?php if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); ?>
+                      
+                      
+                      <?php if($services_count % 4 == 0 || $services_count == 0) :  ?>
+                      
+                      <div class="item <?php if( $services_count < 4 ) : ?>active <?php endif; ?>">
                       <div class="row">
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                      
+                      <?php endif; ?>
+                      
+                      <?php
+                      
+                      $service_image = get_the_post_thumbnail();
+                      
+                      
+                       if( !empty($service_image) ): ?>
+                                      
+                            <div class="col col-sm-3 col-xs-6">
+                                <div class="servicesContent">
+                                    <?php echo $service_image ; ?>
+                                    
+                                    <div class="servicesContentTitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
+                                    
+                                </div>
                             </div>
-                        </div>
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                       <div class="row">
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                        <div class="col col-sm-3 col-xs-6">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services" class="img-responsive">
-                                <p class="servicesContentTitle">Behandling 1</p>
-                            </div>
-                        </div>
-                      </div> 
-                    </div>
+						<?php $services_count = $the_query->current_post +1; ?>
+                        <?php if($services_count % 4 == 0) :  ?>
+                            
+                            
+                          </div></div>
+                            
+                        <?php endif; ?>
+												
+                        <?php endif; ?>      
+                        
+                        <?php endwhile; endif; ?>
+        
+                      </div><!-- Row -->
+                    </div><!-- Item -->
+                    
                   </div>
                 
+                  <?php if($services_count > 4) : ?>
+                  
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-services" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -134,6 +225,9 @@
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
+                  
+                  <?php endif; ?>
+                  
                 </div>            
             </div><!-- Continer -->
         </section>
@@ -146,23 +240,75 @@
                     <div class="col col-sm-7">
                         <h3>Locatie en route planner</h3>
                         <section class="locationMap">
-                        	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60896.85431750921!2d78.51391505!3d17.4571583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1441102683963" width="100%" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        
+						<?php if( get_option('db_google_map') != "" ): ?>
+                            
+                            <?php echo stripslashes(get_option('db_google_map'));  ?>
+                        
+                        <?php endif; ?>
+                        
                         </section>
                     </div>
                     <div class="col col-sm-5" id="openingTime">
                     	<h3>Onze openingstijden</h3>
                         <ul>
-                        	<li>Monday<span>08:00</span></li>
-                            <li>Monday<span>08:00</span></li>
-                            <li>Monday<span>08:00</span></li>
-                            <li>Monday<span>08:00</span></li>
-                            <li>Monday<span>08:00</span></li>
-                            <li>Monday<span>08:00</span></li>
-                            <li>Monday<span>08:00</span></li>
+                        	<?php if( get_option('db_timing_mon') != "" ): ?>
+                            
+                        	<li>Monday<span><?php echo get_option('db_timing_mon');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_tue') != "" ): ?>
+                            
+                        	<li>Tuesday<span><?php echo get_option('db_timing_tue');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_wed') != "" ): ?>
+                            
+                        	<li>Wednesday<span><?php echo get_option('db_timing_wed');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_thu') != "" ): ?>
+                            
+                        	<li>Thursday<span><?php echo get_option('db_timing_thu');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_fri') != "" ): ?>
+                            
+                        	<li>Friday<span><?php echo get_option('db_timing_fri');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_sat') != "" ): ?>
+                            
+                        	<li>Saturday<span><?php echo get_option('db_timing_sat');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_sun') != "" ): ?>
+                            
+                        	<li>Sunday<span><?php echo get_option('db_timing_sun');  ?></span></li>
+                            
+                        	<?php endif; ?>
+                            
                         </ul>
+                        
                         <div class="homeContentButton">
-                            <input type="button" value="Bel 015 - 3100782" class="btn btn-md btn-primary">
-                            <input type="button" value="Afspraak maken" class="btn btn-md btn-warning">
+                            
+							<?php if( get_option('db_timing_btn_one_txt') != "" && get_option('db_timing_btn_one_url') != "" ): ?>
+                            
+                            <a href="<?php echo get_option('db_timing_btn_one_url');  ?>" class="btn btn-md btn-primary"><?php echo get_option('db_timing_btn_one_txt');  ?></a>
+                            
+                        	<?php endif; ?>
+                            
+                            <?php if( get_option('db_timing_btn_two_txt') != "" && get_option('db_timing_btn_two_url') != "" ): ?>
+                            
+                            <a href="<?php echo get_option('db_timing_btn_two_url');  ?>" class="btn btn-md btn-warning"><?php echo get_option('db_timing_btn_two_txt');  ?></a>
+                            
+                        	<?php endif; ?>
                         </div> 
                     </div>
                 </div>  
@@ -170,66 +316,67 @@
                 	<h3>Partners en referenties</h3>
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
-                    <div class="item active">
+                    
+
+                      
+
+                                      
+                          
+
+                        
+					  <?php 
+                            $args = array( 'post_type' => 'partners');
+                            $the_query = new WP_Query( $args );
+							
+							$partners_count = 0;
+                      ?>
+                      <?php if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); ?>
+                      
+                      
+                      <?php if($partners_count % 5 == 0 || $partners_count == 0) :  ?>
+                      
+                      <div class="item <?php if( $partners_count < 5 ) : ?>active <?php endif; ?>">
                       <div class="row">
+                      
+                      <?php endif; ?>
+                      
+                      
+                      <?php
+                      
+                      $partner_logo = get_field('partner_logo');
+                      $partner_url = get_field('partner_url');
+                      
+                       if( !empty($partner_logo) ): ?>
+                       
+                       
                         <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
+                            <div class="partnersContent">
+                                <a href="partner_url"><img src="<?php echo $partner_logo['url']; ?>" alt="<?php echo $partner_logo['alt']; ?>" class="img-responsive" /></a>
                             </div>
                         </div>
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-						<div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
+                    	
+						<?php $partners_count = $the_query->current_post +1; ?>
+                        <?php if($partners_count % 5 == 0) :  ?>
+                            
+                            
+                          </div></div>
+                            
+                        <?php endif; ?>
+												
+                        <?php endif; ?>      
+                        
+                        <?php endwhile; endif; ?>
+                                                
+                        
                       </div><!-- Row -->
                     </div>
-                    <div class="item">
-                      <div class="row">
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-						<div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col col-sm-15 col-xs-4">
-                            <div class="servicesContent">
-                                <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners" class="img-responsive">
-                            </div>
-                        </div>
-                      </div><!-- Row -->
-                    </div>
+                    
+                    
                   </div>
                 
+                
+                   <?php if($partners_count > 5) : ?>
+                   
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-partners" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -239,6 +386,9 @@
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
+                  
+                  <?php endif; ?>
+                  
                 </div>         
             </div><!-- Continer -->
         </section>
