@@ -3,36 +3,11 @@
         <!-- BANNER 
         ============================== -->
         <section id="banner">
-        	
-            <?php if($device != 'mobile'){?>
             
             <article>
-            
-				<?php if( get_option('db_banner_image') != "" && get_option('db_banner_video') == "" ): ?>
-				
-					<img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
-				
-				<?php endif; ?>
+            	
+                <?php get_template_part('banner', 'content'); ?>              
                 
-                <?php if( get_option('db_banner_image') == "" && get_option('db_banner_video') == "" ): ?>
-				
-					<img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
-				
-				<?php endif; ?>
-                
-                <?php
-                if( get_option('db_banner_video') != "" ): ?>
-					
-                    <div class="videoBanner">
-                    
-                    
-                    <iframe width="560" height="315" src="<?php echo stripslashes(get_option('db_banner_video')); ?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                    
-                    
-                    
-					</div>
-				
-				<?php endif; ?>
                 
                 <?php
                 if( get_option('db_banner_title') != "" ): ?>
@@ -43,34 +18,7 @@
 
             </article>
             
-            <?php }
-            elseif($device == 'mobile'){ ?>
-            
-            <article>
-            
-				<?php if( get_option('db_banner_image') != "" ): ?>
-				
-					<img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
-				
-				<?php endif; ?>
-                
-                <?php if( get_option('db_banner_image') == "" ): ?>
-				
-					<img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
-				
-				<?php endif; ?>
-                
-                <?php
-                if( get_option('db_banner_title') != "" ): ?>
-                	
-                    <div class="bannerText"><section id="bannerTitle"><?php echo get_option('db_banner_title'); ?></section></div>
-                    
-                <?php endif; ?>
 
-            </article>
-            <?php
-            }
-			?>
         </section>
     
         <!-- CONTENT SECTION 
@@ -91,7 +39,7 @@
                 
                 <?php endif; ?>
                 
-                <div class="homeContentText">
+                <div class="homeContentText contentColorDark">
                     <?php echo get_option('db_home_content_body_primary'); ?>
                 </div>
                 
@@ -99,13 +47,13 @@
                 
                 	<?php if( get_option('db_home_content_button1_primary') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button1_primary'); ?>" class="btn btn-md btn-primary">
+                    <input type="button" value="<?php echo get_option('db_home_content_button1_primary'); ?>" class="btn btn-md secondaryBtnColor primaryLightColor">
                     
                     <?php endif; ?>
                     
                     <?php if( get_option('db_home_content_button2_primary') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button2_primary'); ?>" class="btn btn-md btn-warning">
+                    <input type="button" value="<?php echo get_option('db_home_content_button2_primary'); ?>" class="btn btn-md primaryBackgroundColor primaryLightColor">
                     
                     <?php endif; ?>
                     
@@ -129,7 +77,7 @@
                 
                 <?php endif; ?>
                 
-                <div class="homeContentText">
+                <div class="homeContentText contentColorDark">
                     <?php echo get_option('db_home_content_body_secondary'); ?>
                 </div>
                 
@@ -137,13 +85,13 @@
                 
                 	<?php if( get_option('db_home_content_button1_secondary') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button1_secondary'); ?>" class="btn btn-md btn-primary">
+                    <input type="button" value="<?php echo get_option('db_home_content_button1_secondary'); ?>" class="btn btn-md secondaryBtnColor primaryLightColor">
                     
                     <?php endif; ?>
                     
                     <?php if( get_option('db_home_content_button2_secondary') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button2_secondary'); ?>" class="btn btn-md btn-warning">
+                    <input type="button" value="<?php echo get_option('db_home_content_button2_secondary'); ?>" class="btn btn-md primaryBackgroundColor primaryLightColor">
                     
                     <?php endif; ?>
                     
@@ -157,9 +105,9 @@
         
         <!-- SERVICES 
         ============================== -->
-        <section id="services">
+        <section id="services" class="primaryBackgroundColor">
         	<div class="container">
-                <h3>Onze diensten</h3>
+                <h3 class="primaryLightColor">Onze diensten</h3>
                 <div id="carousel-services" class="carousel slide" data-ride="carousel">
 
                 
@@ -190,10 +138,10 @@
                        if( !empty($service_image) ): ?>
                                       
                             <div class="col col-sm-3 col-xs-6">
-                                <div class="servicesContent">
+                                <div class="mdBoxContent">
                                     <?php echo $service_image ; ?>
                                     
-                                    <div class="servicesContentTitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
+                                    <div class="mdBoxContentTitle contentColorDark"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
                                     
                                 </div>
                             </div>
@@ -218,11 +166,11 @@
                   
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-services" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-chevron-left primaryLightColor" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="right carousel-control" href="#carousel-services" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-chevron-right primaryLightColor" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
                   
@@ -249,48 +197,62 @@
                         
                         </section>
                     </div>
+                    
+                    <?php if( get_option('db_display_time_form') == "Contact Form" ): ?>
+                    
+                    <section id="customContactForm" class="col col-sm-5" >
+                        <h4>Contactformulier</h4>
+                        <?php $contact_form_sc = get_field('service_contact_form');?>
+                        <?php echo do_shortcode('[contact-form-7 id="73" title="Contact form 1"]'); ?>
+                    </section>
+                    
+                    <?php endif; ?>
+                        
+                     <?php if( get_option('db_display_time_form') != "Contact Form" ): ?>
+                        
                     <div class="col col-sm-5" id="openingTime">
-                    	<h3>Onze openingstijden</h3>
+                        
+                        <h3>Onze openingstijden</h3>
                         <ul>
                         	<?php if( get_option('db_timing_mon') != "" ): ?>
                             
-                        	<li>Monday<span><?php echo get_option('db_timing_mon');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Monday<span><?php echo get_option('db_timing_mon');  ?></span></li>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_tue') != "" ): ?>
                             
-                        	<li>Tuesday<span><?php echo get_option('db_timing_tue');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Tuesday<span><?php echo get_option('db_timing_tue');  ?></span></li>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_wed') != "" ): ?>
                             
-                        	<li>Wednesday<span><?php echo get_option('db_timing_wed');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Wednesday<span><?php echo get_option('db_timing_wed');  ?></span></li>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_thu') != "" ): ?>
                             
-                        	<li>Thursday<span><?php echo get_option('db_timing_thu');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Thursday<span><?php echo get_option('db_timing_thu');  ?></span></li>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_fri') != "" ): ?>
                             
-                        	<li>Friday<span><?php echo get_option('db_timing_fri');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Friday<span><?php echo get_option('db_timing_fri');  ?></span></li>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_sat') != "" ): ?>
                             
-                        	<li>Saturday<span><?php echo get_option('db_timing_sat');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Saturday<span><?php echo get_option('db_timing_sat');  ?></span></li>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_sun') != "" ): ?>
                             
-                        	<li>Sunday<span><?php echo get_option('db_timing_sun');  ?></span></li>
+                        	<li class="contentColorDark"><i class="fa fa-cog"></i>Sunday<span><?php echo get_option('db_timing_sun');  ?></span></li>
                             
                         	<?php endif; ?>
                             
@@ -300,17 +262,19 @@
                             
 							<?php if( get_option('db_timing_btn_one_txt') != "" && get_option('db_timing_btn_one_url') != "" ): ?>
                             
-                            <a href="<?php echo get_option('db_timing_btn_one_url');  ?>" class="btn btn-md btn-primary"><?php echo get_option('db_timing_btn_one_txt');  ?></a>
+                            <a href="<?php echo get_option('db_timing_btn_one_url');  ?>" class="btn btn-md secondaryBtnColor primaryLightColor"><?php echo get_option('db_timing_btn_one_txt');  ?></a>
                             
                         	<?php endif; ?>
                             
                             <?php if( get_option('db_timing_btn_two_txt') != "" && get_option('db_timing_btn_two_url') != "" ): ?>
                             
-                            <a href="<?php echo get_option('db_timing_btn_two_url');  ?>" class="btn btn-md btn-warning"><?php echo get_option('db_timing_btn_two_txt');  ?></a>
+                            <a href="<?php echo get_option('db_timing_btn_two_url');  ?>" class="btn btn-md primaryBackgroundColor primaryLightColor"><?php echo get_option('db_timing_btn_two_txt');  ?></a>
                             
                         	<?php endif; ?>
                         </div> 
                     </div>
+                    
+                    <?php endif; ?>
                 </div>  
                 <div id="carousel-partners" class="carousel slide" data-ride="carousel">
                 	<h3>Partners en referenties</h3>
@@ -379,11 +343,11 @@
                    
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-partners" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-chevron-left primaryLightColor" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="right carousel-control" href="#carousel-partners" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-chevron-right primaryLightColor" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
                   

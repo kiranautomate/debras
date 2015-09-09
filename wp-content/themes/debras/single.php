@@ -11,31 +11,7 @@
                 <section id="banner">
                 <article>
                 
-                    <?php if( get_option('db_banner_image') != "" && get_option('db_banner_video') == "" ): ?>
-                    
-                        <img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
-                    
-                    <?php endif; ?>
-                    
-                    <?php if( get_option('db_banner_image') == "" && get_option('db_banner_video') == "" ): ?>
-                    
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
-                    
-                    <?php endif; ?>
-                    
-                    <?php
-                    if( get_option('db_banner_video') != "" ): ?>
-                        
-                        <div class="videoBanner">
-                        
-                        
-                        <iframe width="560" height="315" src="<?php echo stripslashes(get_option('db_banner_video')); ?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                        
-                        
-                        
-                        </div>
-                    
-                    <?php endif; ?>
+					<?php get_template_part('banner', 'content'); ?>   
                         
                     <div class="bannerText"><section id="bannerTitle"><?php wp_title(''); ?></section></div>
     
@@ -51,30 +27,27 @@
                              
                             <h1><?php the_title(); ?></h1>
                             
-                            <div class="col col-sm-8 colLeft">
+                            <div class="col col-lg-8 colLeft">
                             
                                 <article class="post">
                                     <div class="page-header">
                                     
-                                        <p><em>
-                                            By <?php the_author(); ?>
-                                            On <?php the_time('l F jS, Y');?>
-                                            in <?php the_category(', '); ?>
-                                            <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
+                                        <p class="contentColorDark"><em>
+                                            By <strong><?php the_author(); ?></strong>
+                                            On <strong><?php the_time('l F jS, Y');?></strong>
+                                            in <strong class="primaryAnchorColor"><?php the_category(', '); ?></strong>
                                         </em></p>
                                     </div>
                                     
-                                    <?php the_content(); ?>
+                                    <span class="contentColorDark"><?php the_content(); ?></span>
                                     
                                     <hr>
                                     
-                                    <?php comments_template(); ?>
-                                    
                                     <div class="navigation">
-                                        <div class="alignleft">
+                                        <div class="alignleft primaryAnchorColor">
 											<?php previous_post_link(); ?>
                                         </div>
-                                        <div class="alignright">
+                                        <div class="alignright primaryAnchorColor">
 											<?php next_post_link(); ?>
                                         </div>
                                     </div> <!-- end navigation -->

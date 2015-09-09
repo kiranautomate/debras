@@ -68,13 +68,13 @@ function wpt_register_theme_customizer( $wp_customize ) {
 
   // Customize Header Image Settings  
   $wp_customize->add_section( 'header_text_styles' , array(
-	  'title'      => __('Header Text Styles','wptthemecustomizer'), 
+	  'title'      => __('Banner Text Styles','wptthemecustomizer'), 
 	  'priority'   => 30    
   ) );
   
   $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
   $wp_customize->get_control('header_textcolor')->section = 'header_text_styles'; 
-  $wp_customize->get_control('header_textcolor')->label = __('Site Title Color', 'wptthemecustomizer');
+  $wp_customize->get_control('header_textcolor')->label = __('Banner Title Color', 'wptthemecustomizer');
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
 	
   // Customize title and tagline sections and labels
@@ -91,6 +91,9 @@ function wpt_register_theme_customizer( $wp_customize ) {
   $wp_customize->get_control('page_on_front')->label = __('Select Homepage', 'wptthemecustomizer');  
   $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage', 'wptthemecustomizer'); 
 	 	  
+  //Remove default panels from admin menu
+  $wp_customize->remove_section( 'colors');
+  
   // Create custom panels
   $wp_customize->add_panel( 'general_settings', array(
       'priority' => 10,
@@ -138,7 +141,27 @@ function wpt_register_theme_customizer( $wp_customize ) {
            )
        )
    ); 
+  //Add favicon setting to custom logo section
+  $wp_customize->add_setting(
+      'wpt_favicon',
+      array(
+          'default'         => get_template_directory_uri() . '/img/favicon.png'
+      )
+  );
+  $wp_customize->add_control(
+       new My_Customize_Image_Reloaded_Control(
+           $wp_customize,
+           'custom_favicon',
+           array(
+               'label'      => __( 'Change Favicon', 'wptthemecustomizer' ),
+               'section'    => 'custom_logo',
+               'settings'   => 'wpt_favicon',
+               'context'    => 'wpt-custom-favicon' 
+           )
+       )
+   ); 
    
+      
   // Add Custom Footer Text
   $wp_customize->add_section( 'custom_footer_text' , array(
     'title'      => __('Change Footer Text','wptthemecustomizer'), 
@@ -166,12 +189,13 @@ function wpt_register_theme_customizer( $wp_customize ) {
         )
    );
 
-  // Add H1 Style Settings
-  $wp_customize->add_section( 'h1_styles' , array(
-    'title'      => __('H1 Styles','wptthemecustomizer'), 
+  // Add HEADER Style Settings
+  $wp_customize->add_section( 'h_styles' , array(
+    'title'      => __('Header Tags(h1, h2 ...) Styles','wptthemecustomizer'), 
     'panel'      => 'design_settings',
     'priority'   => 100    
-  ) );  
+  ) ); 
+   //H1 Style Settings 
   $wp_customize->add_setting(
       'wpt_h1_color',
       array(
@@ -184,8 +208,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
            $wp_customize,
            'custom_h1_color',
            array(
-               'label'      => __( 'Color', 'wptthemecustomizer' ),
-               'section'    => 'h1_styles',
+               'label'      => __( 'H1 Color', 'wptthemecustomizer' ),
+               'section'    => 'h_styles',
                'settings'   => 'wpt_h1_color' 
            )
        )
@@ -202,8 +226,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
             $wp_customize,
             'custom_h1_font_size',
             array(
-                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
-                'section'        => 'h1_styles',
+                'label'          => __( 'H1 Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h_styles',
                 'settings'       => 'wpt_h1_font_size',
                 'type'           => 'select',
                 'choices'        => array(
@@ -223,12 +247,7 @@ function wpt_register_theme_customizer( $wp_customize ) {
         )       
    );   
 
-  // Add H3 Style Settings
-  $wp_customize->add_section( 'h2_styles' , array(
-    'title'      => __('H2 Styles','wptthemecustomizer'), 
-    'panel'      => 'design_settings',
-    'priority'   => 100    
-  ) );  
+  // Add H2 Style Settings
   $wp_customize->add_setting(
       'wpt_h2_color',
       array(
@@ -241,8 +260,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
            $wp_customize,
            'custom_h2_color',
            array(
-               'label'      => __( 'Color', 'wptthemecustomizer' ),
-               'section'    => 'h2_styles',
+               'label'      => __( 'H2 Color', 'wptthemecustomizer' ),
+               'section'    => 'h_styles',
                'settings'   => 'wpt_h2_color' 
            )
        )
@@ -259,8 +278,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
             $wp_customize,
             'custom_h2_font_size',
             array(
-                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
-                'section'        => 'h2_styles',
+                'label'          => __( 'H2 Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h_styles',
                 'settings'       => 'wpt_h2_font_size',
                 'type'           => 'select',
                 'choices'        => array(
@@ -280,11 +299,6 @@ function wpt_register_theme_customizer( $wp_customize ) {
    );   
    
   // Add H3 Style Settings
-  $wp_customize->add_section( 'h3_styles' , array(
-    'title'      => __('H3 Styles','wptthemecustomizer'), 
-    'panel'      => 'design_settings',
-    'priority'   => 100    
-  ) );  
   $wp_customize->add_setting(
       'wpt_h3_color',
       array(
@@ -297,8 +311,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
            $wp_customize,
            'custom_h3_color',
            array(
-               'label'      => __( 'Color', 'wptthemecustomizer' ),
-               'section'    => 'h3_styles',
+               'label'      => __( 'H3 Color', 'wptthemecustomizer' ),
+               'section'    => 'h_styles',
                'settings'   => 'wpt_h3_color' 
            )
        )
@@ -315,8 +329,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
             $wp_customize,
             'custom_h3_font_size',
             array(
-                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
-                'section'        => 'h3_styles',
+                'label'          => __( 'H3 Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h_styles',
                 'settings'       => 'wpt_h3_font_size',
                 'type'           => 'select',
                 'choices'        => array(
@@ -336,11 +350,6 @@ function wpt_register_theme_customizer( $wp_customize ) {
    );   
 
   // Add H4 Style Settings
-  $wp_customize->add_section( 'h4_styles' , array(
-    'title'      => __('H4 Styles','wptthemecustomizer'), 
-    'panel'      => 'design_settings',
-    'priority'   => 100    
-  ) );  
   $wp_customize->add_setting(
       'wpt_h4_color',
       array(
@@ -353,8 +362,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
            $wp_customize,
            'custom_h4_color',
            array(
-               'label'      => __( 'Color', 'wptthemecustomizer' ),
-               'section'    => 'h4_styles',
+               'label'      => __( 'H4 Color', 'wptthemecustomizer' ),
+               'section'    => 'h_styles',
                'settings'   => 'wpt_h4_color' 
            )
        )
@@ -371,8 +380,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
             $wp_customize,
             'custom_h4_font_size',
             array(
-                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
-                'section'        => 'h4_styles',
+                'label'          => __( 'H4 Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h_styles',
                 'settings'       => 'wpt_h4_font_size',
                 'type'           => 'select',
                 'choices'        => array(
@@ -392,11 +401,6 @@ function wpt_register_theme_customizer( $wp_customize ) {
    );   
 
   // Add H5 Style Settings
-  $wp_customize->add_section( 'h5_styles' , array(
-    'title'      => __('H5 Styles','wptthemecustomizer'), 
-    'panel'      => 'design_settings',
-    'priority'   => 100    
-  ) );  
   $wp_customize->add_setting(
       'wpt_h5_color',
       array(
@@ -409,8 +413,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
            $wp_customize,
            'custom_h5_color',
            array(
-               'label'      => __( 'Color', 'wptthemecustomizer' ),
-               'section'    => 'h5_styles',
+               'label'      => __( 'H5 Color', 'wptthemecustomizer' ),
+               'section'    => 'h_styles',
                'settings'   => 'wpt_h5_color' 
            )
        )
@@ -427,8 +431,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
             $wp_customize,
             'custom_h5_font_size',
             array(
-                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
-                'section'        => 'h5_styles',
+                'label'          => __( 'H5 Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h_styles',
                 'settings'       => 'wpt_h5_font_size',
                 'type'           => 'select',
                 'choices'        => array(
@@ -448,11 +452,6 @@ function wpt_register_theme_customizer( $wp_customize ) {
    );   
    
   // Add H6 Style Settings
-  $wp_customize->add_section( 'h6_styles' , array(
-    'title'      => __('H6 Styles','wptthemecustomizer'), 
-    'panel'      => 'design_settings',
-    'priority'   => 100    
-  ) );  
   $wp_customize->add_setting(
       'wpt_h6_color',
       array(
@@ -465,8 +464,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
            $wp_customize,
            'custom_h6_color',
            array(
-               'label'      => __( 'Color', 'wptthemecustomizer' ),
-               'section'    => 'h6_styles',
+               'label'      => __( 'H6 Color', 'wptthemecustomizer' ),
+               'section'    => 'h_styles',
                'settings'   => 'wpt_h6_color' 
            )
        )
@@ -483,8 +482,8 @@ function wpt_register_theme_customizer( $wp_customize ) {
             $wp_customize,
             'custom_h6_font_size',
             array(
-                'label'          => __( 'Font Size', 'wptthemecustomizer' ),
-                'section'        => 'h6_styles',
+                'label'          => __( 'H6 Font Size', 'wptthemecustomizer' ),
+                'section'        => 'h_styles',
                 'settings'       => 'wpt_h6_font_size',
                 'type'           => 'select',
                 'choices'        => array(
@@ -502,7 +501,147 @@ function wpt_register_theme_customizer( $wp_customize ) {
             )
         )       
    );      
-	
+
+  // Color Settings
+  $wp_customize->add_section( 'color_settings' , array(
+    'title'      => __('Color Settings','wptthemecustomizer'), 
+    'panel'      => 'design_settings',
+    'priority'   => 10    
+  ) );  
+  $wp_customize->add_setting(
+      'wpt_primary_color',
+      array(
+          'default'         => '#D87A00',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_primary_color',
+           array(
+               'label'      => __( 'Primary Color', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_primary_color' 
+           )
+       )
+   ); 
+
+  $wp_customize->add_setting(
+      'wpt_primary_content_light_color',
+      array(
+          'default'         => '#fff',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_primary_content_light_color',
+           array(
+               'label'      => __( 'Primary Content Color (Light)', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_primary_content_light_color' 
+           )
+       )
+   ); 
+   
+
+  $wp_customize->add_setting(
+      'wpt_secondary_btn_color',
+      array(
+          'default'         => '#b3b3b3',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_secondary_btn_color',
+           array(
+               'label'      => __( 'Secondary Button Color', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_secondary_btn_color' 
+           )
+       )
+   ); 
+   
+  $wp_customize->add_setting(
+      'wpt_content_color_dark',
+      array(
+          'default'         => '#000',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_content_color_dark',
+           array(
+               'label'      => __( 'Content Color (Dark)', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_content_color_dark' 
+           )
+       )
+   );    
+
+  $wp_customize->add_setting(
+      'wpt_primary_a_color',
+      array(
+          'default'         => '#000',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_primary_a_color',
+           array(
+               'label'      => __( 'Primary Anchor tags color', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_primary_a_color' 
+           )
+       )
+   ); 
+
+  $wp_customize->add_setting(
+      'wpt_secondary_background_color',
+      array(
+          'default'         => '#F2F2F2',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_secondary_background_color',
+           array(
+               'label'      => __( 'Secondary Background Color (Sidebar, Preheader and thumbnails)', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_secondary_background_color' 
+           )
+       )
+   ); 
+
+  $wp_customize->add_setting(
+      'wpt_secondary_content_color',
+      array(
+          'default'         => '#4D4D4D',
+          'transport'       => 'postMessage'
+      )
+  );
+  $wp_customize->add_control(
+       new WP_Customize_Color_Control(
+           $wp_customize,
+           'custom_secondary_content_color',
+           array(
+               'label'      => __( 'Secondary Content color (Sidebar, Preheader and thumbnails)', 'wptthemecustomizer' ),
+               'section'    => 'color_settings',
+               'settings'   => 'wpt_secondary_content_color' 
+           )
+       )
+   );
+            	
 }
 
 add_action( 'customize_register', 'wpt_register_theme_customizer' );
@@ -564,49 +703,107 @@ function wpt_style_header() {
   ?>
   
   <style type="text/css">
+  
+  .bannerText{
+    color: #<?php echo esc_attr( $text_color ); ?>;
+  }
+  
+   <?php if(display_header_text() != true): ?>
+   
+  .bannerText{
+    display: none;
+  } 
+  
+  <?php endif; ?>
+  #primaryLightColor{
+	color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;   
+  }
+  #primaryLightBackgroundColor{
+	background-color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;   
+  }  
+  #primaryLightColor a{
+	color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;
+  }
+  #primaryBackgroundLightContentColor{
+	background-color: <?php echo get_theme_mod('wpt_primary_color'); ?> ; 
+	color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;  
+  }
+  /*Class colors*/
+  .primaryColor,#primaryColor,.primaryColor:hover,#primaryColor:hover{
+	color: <?php echo get_theme_mod('wpt_primary_color'); ?> ;  
+  }
+  .primaryBackgroundColor,#primaryBackgroundColor{
+	background-color: <?php echo get_theme_mod('wpt_primary_color'); ?> ;  
+  }
+  .secondaryBtnColor{
+	background-color: <?php echo get_theme_mod('wpt_secondary_btn_color'); ?> ;  
+  }
+  .primaryLightColor, .primaryLightColor p, .primaryLightColor:hover{
+	color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;   
+  }
+  .primaryLightBackgroundColor{
+	background-color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;   
+  }  
+  .primaryLightColor a{
+	color: <?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;
+  }
+  .contentColorDark, .contentColorDark a{
+	color: <?php echo get_theme_mod('wpt_content_color_dark'); ?> ;
+  }
+  .primaryAnchorColor, .primaryAnchorColor a,#primaryAnchorColor, #primaryAnchorColor a{
+	color: <?php echo get_theme_mod('wpt_primary_a_color'); ?> ;
+  }
+  .secondaryBackgroundColor,#secondaryBackgroundColor{
+	background-color: <?php echo get_theme_mod('wpt_secondary_background_color'); ?> ;  
+  }
+  .secondaryContentColor,.secondaryContentColor:hover, .secondaryContentColor a{
+	color: <?php echo get_theme_mod('wpt_secondary_content_color'); ?> ;  
+  }
+  
+  /*H tags styling*/
   h1 {
     font-size: <?php echo get_theme_mod('wpt_h1_font_size'); ?>;
   }
-  h1{
+  h1, h1 a, h1 a:hover{
     color: <?php echo get_theme_mod('wpt_h1_color'); ?> ;
   }   
   h2 {
     font-size: <?php echo get_theme_mod('wpt_h2_font_size'); ?>;
   }
-  h2{
+  h2, h2 a, h2 a:hover{
     color: <?php echo get_theme_mod('wpt_h2_color'); ?> ;
   }  
   h3 {
     font-size: <?php echo get_theme_mod('wpt_h3_font_size'); ?>;
   }
-  h3{
+  h3, h3 a, h3 a:hover{
     color: <?php echo get_theme_mod('wpt_h3_color'); ?> ;
   }
-
   h4 {
     font-size: <?php echo get_theme_mod('wpt_h4_font_size'); ?>;
   }
-  h4{
+  h4, h4 a, h4 a:hover{
     color: <?php echo get_theme_mod('wpt_h4_color'); ?> ;
   }
-  
   h5 {
     font-size: <?php echo get_theme_mod('wpt_h5_font_size'); ?>;
   }
-  h5{
+  h5, h5 a, h5 a:hover{
     color: <?php echo get_theme_mod('wpt_h5_color'); ?> ;
   }
-  
   h6 {
     font-size: <?php echo get_theme_mod('wpt_h6_font_size'); ?>;
   }
-  h6{
+  h6, h6 a, h6 a:hover{
     color: <?php echo get_theme_mod('wpt_h6_color'); ?> ;
   }
-       
+  /*Plugin elements styling*/
+  .wpcf7 input[type="submit"] {
+	 background-color: <?php echo get_theme_mod('wpt_primary_color'); ?> ; 
+	 color:<?php echo get_theme_mod('wpt_primary_content_light_color'); ?> ;
+  }
   </style>
   <?php 
-
 }
 ?>
 
@@ -762,7 +959,14 @@ array( "name" => "Google Map",
     "id" => $shortname."_google_map",
     "type" => "textarea",
     "std" => ""), 
-	
+
+array( "name" => "Display contact form or timing details",
+    "desc" => "Choose whether you want to display timing details or contact form in the location section of your home page.",
+    "id" => $shortname."_display_time_form",
+    "type" => "select",
+	"options" => array("Timing details", "Contact Form"),
+    "std" => ""), 
+		
 array( "name" => "Monday timings",
     "desc" => "Enter the timings for your service/blusiness.",
     "id" => $shortname."_timing_mon",
@@ -857,7 +1061,13 @@ array( "name" => "Unique selling point four",
     "id" => $shortname."_usp_four",
     "type" => "text",
     "std" => ""), 	
-		 		
+
+array( "name" => "Contact form shortcode",
+    "desc" => "Enter text shortcode for the contact form.",
+    "id" => $shortname."_contact_form",
+    "type" => "text",
+    "std" => ""), 
+			 		
 array( "type" => "close"),
 array( "name" => "Footer",
     "type" => "section"),
@@ -1116,17 +1326,17 @@ function prefix_load_cat_posts () {
 	?>
 	
     <div class="col col-sm-4 col-xs-12" id="post-<?php echo $post->ID; ?>">
-        <div class="lgThumbnailContent">
+        <div class="lgBoxContent">
             
             <?php echo $project_image; ?>
             
-            <div class="lgThumbnailContentTitle">
+            <div class="lgBoxContentTitle secondaryBackgroundColor">
                 
                 <h6 ><a href="<?php echo get_permalink( $post ->ID ); ?>" ><?php echo get_the_title( $post ->ID ); ?></a></h6>
                     
             </div>
             
-            <div class="thumbHighlightText">
+            <div class="thumbHighlightText primaryBackgroundColor primaryLightColor">
                 <h6><?php the_terms( $post->ID, 'project-type', ' ', ', ', ' ' ); ?></h6>
             </div>
             
@@ -1150,5 +1360,77 @@ function prefix_load_cat_posts () {
    echo $response;
    die(1);
    }
+?>
+
+<?php
+//CREATING A THEME OPTIONS PAGE FOR COLOR SETTINGS
+
+//Creating a Theme Options Page
+function my_admin_menu() {
+    $page = add_theme_page( 'Theme Options', 'Theme Options', 'edit_theme_options', 'my-theme-options', 'my_theme_options' );
+    add_action( 'admin_print_styles-' . $page, 'my_admin_scripts' );
+}
+add_action( 'admin_menu', 'my_admin_menu' );
+
+function my_admin_scripts() {
+    wp_enqueue_style( 'farbtastic' );
+    wp_enqueue_script( 'farbtastic' );
+    wp_enqueue_script( 'my-theme-options', get_template_directory_uri() . '/js/theme-options.js', array( 'farbtastic', 'jquery' ) );
+}
+
+//Theme Options Page Contents
+function my_theme_options() {
+    ?>
+    <div class="wrap">
+        <div id="icon-themes" class="icon32" ><br></div>
+        <h2>My Theme Options</h2>
+
+        <form method="post" action="options.php">
+            <?php wp_nonce_field( 'update-options' ); ?>
+            <?php settings_fields( 'my-theme-options' ); ?>
+            <?php do_settings_sections( 'my-theme-options' ); ?>
+            <p class="submit">
+                <input name="Submit" type="submit" class="button-primary" value="Save Changes" />
+            </p >
+        </form>
+    </div>
+    <?php
+}
+
+//Settings, Sections and Fields
+function my_admin_init() {
+    register_setting( 'my-theme-options', 'my-theme-options' );
+    add_settings_section( 'section_general', 'General Settings', 'my_section_general', 'my-theme-options' );
+    add_settings_field( 'color', 'Color', 'my_setting_color', 'my-theme-options', 'section_general' );
+}
+add_action( 'admin_init', 'my_admin_init' );
+
+function my_section_general() {
+    _e( 'The general section description goes here.' );
+}
+
+//The Color Field
+function my_setting_color() {
+    $options = get_option( 'my-theme-options' );
+    ?>
+    <div class="color-picker" style="position: relative;">
+    
+        <input type="text" name="my-theme-options[color]" />
+        <input type='button' class='pickcolor button-secondary' value='Select Color'>
+        <div id='colorpicker' style='z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;'></div>
+        <div style="position: absolute;" id="colorpicker"></div>
+        
+    </div>
+    <?php
+}
+//Adding theme options style to head
+function my_wp_head() {
+    $options = get_option( 'my-theme-options' );
+    $color = $options['color'];
+    echo "<style> h1 { color: $color; } </style>";
+}
+add_action( 'wp_head', 'my_wp_head' );
+
+
 ?>
 

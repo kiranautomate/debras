@@ -45,27 +45,27 @@
                     <div class="item active">
                       <div class="row">
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                       </div>
@@ -73,27 +73,27 @@
                     <div class="item">
                        <div class="row">
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                         <div class="col col-sm-3">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/servicesone.png" alt="services">
-                                <p class="servicesContentTitle">Behandling 1</p>
+                                <p class="mdBoxContentTitle">Behandling 1</p>
                             </div>
                         </div>
                       </div> 
@@ -148,27 +148,27 @@
                     <div class="item active">
                       <div class="row">
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
 						<div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
@@ -177,27 +177,27 @@
                     <div class="item">
                       <div class="row">
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
 						<div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>
                         <div class="col col-xs-15">
-                            <div class="servicesContent">
+                            <div class="mdBoxContent">
                                 <img src="<?php bloginfo('template_directory');?>/img/partners1.png" alt="partners">
                             </div>
                         </div>

@@ -215,16 +215,16 @@ h3{
 	text-align:center;
 	margin:20px 0px 40px 0;	
 }
-.servicesContent{
+.mdBoxContent{
 	width:258px;
 	height:290px;	
 }
-.servicesContent .servicesContentTitle{
+.mdBoxContent .mdBoxContentTitle{
 	text-align:center;
 	background:#fff;
 	height:50px;
 }
-.servicesContentTitle{
+.mdBoxContentTitle{
 	padding: 10px 0;
 	font-weight:500;	
 	font-size:20px;

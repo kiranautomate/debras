@@ -5,31 +5,7 @@
         <section id="banner">
         <article>
         
-            <?php if( get_option('db_banner_image') != "" && get_option('db_banner_video') == "" ): ?>
-            
-                <img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
-            
-            <?php endif; ?>
-            
-            <?php if( get_option('db_banner_image') == "" && get_option('db_banner_video') == "" ): ?>
-            
-                <img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
-            
-            <?php endif; ?>
-            
-            <?php
-            if( get_option('db_banner_video') != "" ): ?>
-                
-                <div class="videoBanner">
-                
-                
-                <iframe width="560" height="315" src="<?php echo stripslashes(get_option('db_banner_video')); ?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                
-                
-                
-                </div>
-            
-            <?php endif; ?>
+			<?php get_template_part('banner', 'content'); ?>   
             
             <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
                 
@@ -56,7 +32,7 @@
                             
                             <div class="col col-sm-5 colLeft" >
                             	
-                                <?php the_content(); ?>
+                                <span class="contentColorDark"><?php the_content(); ?></span>
                                 
                             </div>
                             
@@ -115,6 +91,26 @@
                             </div>
                             
                         </div>
+                        
+                        <div class="row singleProjectNav secondaryBackgroundColor secondaryContentColor">
+                        	<div class="col col-xs-3">
+                            	<a href=""><span class="glyphicon glyphicon-th-large secondaryContentColor largeIcon"></span></a>
+                                <p>Bekijk alle projecten</p>
+                            </div>
+                            <div class="col col-xs-3">
+                            	<a href=""><span class="glyphicon glyphicon-chevron-left secondaryContentColor largeIcon"></span></a>
+                                 <p><?php previous_post_link('%link', 'Vorige project', false); ?></p>
+                            </div>
+                            <div class="col col-xs-3">
+                            	<a href=""><span class="glyphicon glyphicon-chevron-right secondaryContentColor largeIcon"></span></a>
+                                <p><?php next_post_link('%link', 'Volgend project', false); ?></p>
+                            </div>
+                            <div class="col col-xs-3">
+                            	<a href=""><span class="glyphicon glyphicon-list-alt secondaryContentColor largeIcon"></span></a>
+                                <p>Offerte aanvragen</p>
+                            </div>
+                        </div>
+                        
                 </section>
             
             </div>

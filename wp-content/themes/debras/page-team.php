@@ -10,31 +10,7 @@
         <section id="banner">
         	<article>
             
-				<?php if( get_option('db_banner_image') != "" && get_option('db_banner_video') == "" ): ?>
-				
-					<img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
-				
-				<?php endif; ?>
-                
-                <?php if( get_option('db_banner_image') == "" && get_option('db_banner_video') == "" ): ?>
-				
-					<img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
-				
-				<?php endif; ?>
-                
-                <?php
-                if( get_option('db_banner_video') != "" ): ?>
-					
-                    <div class="videoBanner">
-                    
-                    
-                    <iframe width="560" height="315" src="<?php echo stripslashes(get_option('db_banner_video')); ?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                    
-                    
-                    
-					</div>
-				
-				<?php endif; ?>
+				<?php get_template_part('banner', 'content'); ?>   
                 
                 <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
                 	
@@ -47,7 +23,7 @@
     
         <!-- SERVICES LIST SECTION 
         ============================== -->
-        <section id="listServices">
+        <section id="listItems">
         	<div class="container">
                 
                 <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
@@ -55,13 +31,13 @@
                 <h1 class="homeContentTitle">
                     <?php the_title(); ?>
                 </h1>
-                    <?php the_content(); ?>
+                    <span class="contentColorDark"><?php the_content(); ?></span>
                 <?php endwhile; else : ?>
                 
                 <h1 class="homeContentTitle">
                     No page title
                 </h1>
-                <p>
+                <p class="contentColorDark">
                     No content is appearing on the page!
                 </p> 
                 <?php endif; ?>
@@ -84,21 +60,21 @@
                        if( !empty($service_image) ): ?>
                                       
                             <div class="col col-sm-3 col-xs-12">
-                                <div class="servicesContent">
+                                <div class="mdBoxContent">
                                     <?php echo $service_image; ?>
                                     
-                                    <div class="servicesContentTitle">
+                                    <div class="mdBoxContentTitle" id="secondaryBackgroundColor">
                                     	
                                         <h5><?php the_title(); ?></h5>
                                         
-                                        <p><strong><?php echo get_field('member_designation');?></strong></p>
+                                        <p class="contentColorDark"><strong><?php echo get_field('member_designation');?></strong></p>
                                         
-                                        <p id="memberProfile"><?php echo get_field('job_profile');?></p>
+                                        <p id="memberProfile" class="contentColorDark"><?php echo get_field('job_profile');?></p>
                                         
-                                        <p>
-                                        	<a href="<?php echo get_field('linkedin_profile');?>" target="_blank"><i class="fa fa-linkedin fak-circle fak-white"></i></a>
-                                            <a href="<?php echo get_field('email_id');?>" target="_blank"><i class="fa fa-envelope-o fak-circle fak-white"></i></a>
-                                            <i class="fa fa-phone fak-orange"></i>06 - 53792028</p>
+                                        <p class="contentColorDark">
+                                        	<a href="<?php echo get_field('linkedin_profile');?>" target="_blank"><i class="fa fa-linkedin fak-circle primaryBackgroundColor primaryLightColor"></i></a>
+                                            <a href="<?php echo get_field('email_id');?>" target="_blank"><i class="fa fa-envelope-o fak-circle primaryBackgroundColor primaryLightColor"></i></a>
+                                            <i class="fa fa-phone primaryColor"></i>06 - 53792028</p>
                                             
                                     </div>
                                     

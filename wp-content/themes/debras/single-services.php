@@ -2,39 +2,39 @@
 
         <!-- USP  
         ============================== -->
-        <section id="usp">
+        <section id="usp" class="primaryBackgroundColor primaryLightColor">
             	<div class="container clearfix">
                 	
                     <div class="row">
                     	
                         <?php if( get_option('db_usp_one') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_one');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_one');?></span>
                         </div>
                         
                         <?php endif; ?>
                         
                         <?php if( get_option('db_usp_two') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_two');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_two');?></span>
                         </div>
                         
                         <?php endif; ?>
                         
                         <?php if( get_option('db_usp_three') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_three');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_three');?></span>
                         </div>
                         
                         <?php endif; ?>
                         
                         <?php if( get_option('db_usp_four') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_four');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_four');?></span>
                         </div>
                         
                         <?php endif; ?>
@@ -55,31 +55,7 @@
                 <section id="banner">
                 <article>
                 
-                    <?php if( get_option('db_banner_image') != "" && get_option('db_banner_video') == "" ): ?>
-                    
-                        <img src="<?php echo get_option('db_banner_image'); ?>" class="img-responsive" />
-                    
-                    <?php endif; ?>
-                    
-                    <?php if( get_option('db_banner_image') == "" && get_option('db_banner_video') == "" ): ?>
-                    
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/hero-bg.jpg" class="img-responsive" />
-                    
-                    <?php endif; ?>
-                    
-                    <?php
-                    if( get_option('db_banner_video') != "" ): ?>
-                        
-                        <div class="videoBanner">
-                        
-                        
-                        <iframe width="560" height="315" src="<?php echo stripslashes(get_option('db_banner_video')); ?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                        
-                        
-                        
-                        </div>
-                    
-                    <?php endif; ?>
+					<?php get_template_part('banner', 'content'); ?>   
                     
                     <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
                         
@@ -96,7 +72,7 @@
                     	<div class="row">
                         	
                             <h1><?php the_title(); ?></h1>
-                            <div class="col col-sm-8 colLeft">
+                            <div class="col col-lg-8 colLeft">
                                 
                                 <?php if( have_rows('service_slides') ): ?>
                                 
@@ -148,7 +124,7 @@
                                 </div>
                                 <?php endif;?>
                                 
-                                <?php the_field('service_content'); ?>
+                                <span class="contentColorDark"><?php the_field('service_content'); ?></span>
                                 
                                 <!-- CONTACT MEMBER 
                                 ============================== -->
@@ -158,16 +134,16 @@
 								<?php if( $teamMember ): ?>
                                 <?php foreach( $teamMember as $member ): ?>	
                                 
-                                <div id="contactMember">
+                                <div id="contactMember" class="secondaryBackgroundColor">
                                 	<section class="row">
 									
-                                    <div class="col col-xs-2 memberThumbnail">
+                                    <div class="col col-sm-2 memberThumbnail">
 										<?php echo get_the_post_thumbnail($member->ID); ?>
                                     </div>
-                                    <div class="col col-xs-10">
+                                    <div class="col col-sm-10">
                                     	<h4>Meer informatie? Neem contact op met Bas den Hoed</h4>
                                         <span class="glyphicon glyphicon-earphone"></span>
-										<span class="secondSpanColor"><strong><?php  $memberTelephone = get_post_meta($member->ID, 'telephone');echo $memberTelephone['0'];?></strong></span>
+										<span class="contentColorDark"><strong><?php  $memberTelephone = get_post_meta($member->ID, 'telephone');echo $memberTelephone['0'];?></strong></span>
                                     </div>
                                     
                                     </section>
@@ -195,7 +171,7 @@
         
         <!-- SERVICES 
         ============================== -->
-        <section id="services">
+        <section id="services" class="secondaryBackgroundColor">
         	<div class="container">
                 <h3>Onze diensten</h3>
                 <div id="carousel-services" class="carousel slide" data-ride="carousel">
@@ -228,11 +204,11 @@
                        if( !empty($service_image) ): ?>
                                       
                             <div class="col col-sm-3 col-xs-6">
-                                <div class="servicesContent">
+                                <div class="mdBoxContent">
                                 
                                     <?php echo $service_image; ?>
                                     
-                                    <div class="servicesContentTitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
+                                    <div class="mdBoxContentTitle contentColorDark"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
                                     
                                 </div>
                             </div>

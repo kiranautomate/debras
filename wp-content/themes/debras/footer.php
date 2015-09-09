@@ -2,14 +2,17 @@
         <!-- FOOTER 
         ============================== -->
         <footer>
-        	<div class="footerTop">
+        	
+            <div class="footerContent primaryBackgroundColor">
+            
+            	<div class="footerTop">
             	<div class="container">
-                	<div class="row">
+                	<div class="row primaryLightColor">
                     
                         <?php if( get_option('db_telephone_two') != "" ): ?>
                         
                         <div class="col col-sm-4 col-xs-12">
-                            <a href="#"><span class="glyphicon glyphicon-earphone"></span><?php echo get_option('db_telephone_two');  ?></a>
+                            <a href="#"><i class="fa fa-phone primaryColor primaryLightBackgroundColor"></i><?php echo get_option('db_telephone_two');  ?></a>
                         </div>
                         
                         <?php endif; ?>
@@ -17,23 +20,24 @@
                         <?php if( get_option('db_email_id') != "" ): ?>
                         
                         <div class="col col-sm-4 col-xs-12">
-                            <a href="#"><span class="glyphicon glyphicon-envelope"></span><?php echo get_option('db_email_id');  ?></a>
+                            <a href="#"><i class="fa fa-envelope-o primaryColor primaryLightBackgroundColor"></i><?php echo get_option('db_email_id');  ?></a>
                         </div>
                         
                         <?php endif; ?>
                         
                         <div class="col col-sm-4 col-xs-12">
-                            <a href="#"><span class="glyphicon glyphicon-calendar"></span>Afspraak maken</a>
+                            <a href="#"><i class="fa fa-calendar primaryColor primaryLightBackgroundColor"></i>Afspraak maken</a>
                         </div>
                         
                     </div>
                 </div>
             </div><!-- footerTop -->
-            <div class="footerContent">
+            
+            
             	<div class="container">
-                	<div class="row">
-                    	<div class="col col-sm-15 col-xs-6">
-                        	<h3>Hoofdmenu</h3>
+                	<div class="row primaryLightColor">
+                    	<div class="col col-sm-15 col-xs-12 primaryLightColor">
+                        	<h3 class="primaryLightColor">Hoofdmenu</h3>
                             
 							<?php
 							$args = array(
@@ -57,8 +61,8 @@
 									$my_query = new WP_Query($args);
 									if( $my_query->have_posts() ) {
 						?>				
-                        <div class="col col-sm-15 col-xs-6">
-                        	<h3>Onze diensten</h3>
+                        <div class="col col-sm-15 col-xs-12">
+                        	<h3 class="primaryLightColor">Onze diensten</h3>
                             <ul>
                                 
                                 	<?php
@@ -78,8 +82,8 @@
                                 
                                 
                             
-                        <div class="col col-sm-15 col-xs-6">
-                        	<h3>Hoofdmenu</h3>
+                        <div class="col col-sm-15 col-xs-12 primaryLightColor">
+                        	<h3 class="primaryLightColor">Hoofdmenu</h3>
                             <ul>
                             	<li><a href="#">Home</a></li>
                                 <li><a href="#">Home</a></li>
@@ -97,8 +101,8 @@
 						if( have_posts()) : ?>
 							
 							
-						<div class="col col-sm-15 col-xs-6">
-                        	<h3>Hoofdmenu</h3>
+						<div class="col col-sm-15 col-xs-12 primaryLightColor">
+                        	<h3 class="primaryLightColor">Hoofdmenu</h3>
                             <ul>	
                             
 							  <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -108,8 +112,8 @@
                             </ul>
                         </div>
                         <?php endif; ?>
-                        <div class="col col-sm-15 col-xs-6">
-                        	<h3>Contact</h3>
+                        <div class="col col-sm-15 col-xs-12">
+                        	<h3 class="primaryLightColor">Contact</h3>
                            		 
 								 <?php if( get_option('db_custom_address') != "" ): ?>
                                     <p id="contactAddress"> <?php echo get_option('db_custom_address');  ?> </p>
@@ -129,15 +133,15 @@
                                 
                                 <!-- Social icons -->
 								<?php if( get_option('db_facebook_id') != "" ): ?>
-                                    <a href="//<?php echo get_option('db_facebook_id');  ?>" target= "_blank"><img src="<?php echo get_template_directory_uri();?>/img/fb_soc.png" alt="Social icons" /></a>
+                                    <a href="//<?php echo get_option('db_facebook_id');  ?>" target= "_blank"><i class="fa fa-facebook primaryColor primaryLightBackgroundColor"></i></a>
                                 <?php endif; ?>
                                 
                                 <?php if( get_option('db_twitter_handle') != "" ): ?>
-                                    <a href="//<?php echo get_option('db_twitter_handle');  ?>" target= "_blank"><img src="<?php echo get_template_directory_uri();?>/img/tw_soc.png" alt="Social icons" /></a>
+                                    <a href="//<?php echo get_option('db_twitter_handle');  ?>" target= "_blank"><i class="fa fa-twitter primaryColor primaryLightBackgroundColor"></i></a>
                                 <?php endif; ?>
                                 
                                 <?php if( get_option('db_linkedin_profile') != "" ): ?>
-                                    <a href="//<?php echo get_option('db_linkedin_profile');  ?>" target= "_blank"><img src="<?php echo get_template_directory_uri();?>/img/li_soc.png" alt="Social icons" /></a>
+                                    <a href="//<?php echo get_option('db_linkedin_profile');  ?>" target= "_blank"><i class="fa fa-linkedin primaryColor primaryLightBackgroundColor"></i></a>
                                 <?php endif; ?>
 
                         </div>
@@ -145,7 +149,7 @@
                 </div>
             </div><!-- footerContent -->
             
-            <div class="footerBottom">
+            <div class="footerBottom primaryLightColor">
             		
                     <?php if( get_theme_mod( 'wpt_footer_text') == "" ): ?>
                     	<span id="footertext">&copy; Copyright <?php echo date('Y');?> <?php bloginfo('name');?> </span>

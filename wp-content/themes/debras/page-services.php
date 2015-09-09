@@ -7,39 +7,39 @@
 
         <!-- USP  
         ============================== -->
-        <section id="usp">
+        <section id="usp" class="primaryBackgroundColor primaryLightColor">
             	<div class="container clearfix">
                 	
                     <div class="row">
                     	
                         <?php if( get_option('db_usp_one') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_one');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_one');?></span>
                         </div>
                         
                         <?php endif; ?>
                         
                         <?php if( get_option('db_usp_two') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_two');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_two');?></span>
                         </div>
                         
                         <?php endif; ?>
                         
                         <?php if( get_option('db_usp_three') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_three');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_three');?></span>
                         </div>
                         
                         <?php endif; ?>
                         
                         <?php if( get_option('db_usp_four') != "" ): ?>
                         
-                        <div class="col col-sm-6 col-xs-12 col-md-3">
-                        	<img src="<?php echo get_template_directory_uri();?>/img/tick.png" class="beforeIcon" alt="tick icon"/><span><?php echo get_option('db_usp_four');?></span>
+                        <div class="col col-lg-3">
+                        	<i class="fa fa-check"></i><span><?php echo get_option('db_usp_four');?></span>
                         </div>
                         
                         <?php endif; ?>
@@ -51,7 +51,7 @@
     
         <!-- SERVICES LIST SECTION 
         ============================== -->
-        <section id="listServices">
+        <section id="listItems">
         	<div class="container">
                 
                 <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
@@ -59,7 +59,7 @@
                 <h1 class="homeContentTitle">
                     <?php the_title(); ?>
                 </h1>
-                    <?php the_content(); ?>
+                   <span class="contentColorDark"> <?php the_content(); ?></span>
                 <?php endwhile; else : ?>
                 
                 <h1 class="homeContentTitle">
@@ -88,11 +88,11 @@
                        if( !empty($service_image) ): ?>
                                       
                             <div class="col col-sm-3 col-xs-12">
-                                <div class="servicesContent">
+                                <div class="mdBoxContent">
                                 
                                     <?php echo $service_image; ?>
                                     
-                                    <div class="servicesContentTitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
+                                    <div class="mdBoxContentTitle contentColorDark" id="secondaryBackgroundColor"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
                                     
                                 </div>
                             </div>

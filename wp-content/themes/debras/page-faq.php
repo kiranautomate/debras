@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Projects Page
+	Template Name: FAQ Page
 */
 ?>
 <?php get_header(); ?>
