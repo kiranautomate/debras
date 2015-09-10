@@ -92,7 +92,7 @@
                                 
                                     <?php echo $service_image; ?>
                                     
-                                    <div class="mdBoxContentTitle contentColorDark" id="secondaryBackgroundColor"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
+                                    <div class="mdBoxContentTitle contentColorDark" id="lightGreyBack"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></div>
                                     
                                 </div>
                             </div>

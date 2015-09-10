@@ -171,7 +171,7 @@
         
         <!-- SERVICES 
         ============================== -->
-        <section id="services" class="secondaryBackgroundColor">
+        <section id="services" class="lightGreyBack">
         	<div class="container">
                 <h3>Onze diensten</h3>
                 <div id="carousel-services" class="carousel slide" data-ride="carousel">

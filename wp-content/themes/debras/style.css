@@ -94,7 +94,7 @@ ul{
 .pullCenter{
 	margin:0 auto;	
 }
-input:focus{
+input:focus, img:focus{
 	outline:none;	
 }
 input[placeholder] {
@@ -168,10 +168,13 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover
 	color:#000;	
 }
 .secondaryBackgroundColor, #secondaryBackgroundColor{
-  background-color: #F2F2F2; 
+  background-color: #e6e6e6; 
 }
 .secondaryContentColor,.secondaryContentColor:hover{
   color: #4D4D4D;  
+}
+.lightGreyBack, #lightGreyBack{
+  background-color: #f2f2f2;
 }
 /* === CUSTOM GLYPH ICONS === */
 .glyph-email{
@@ -202,10 +205,6 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover
 	display: block;
     max-width: 100%;
     height: auto;
-}
-.menu-main-menu-container{
-	width:70%;
-	float:right;
 }
 /* === Nav Bar CSS === */
 .navbar {
@@ -256,6 +255,7 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover
 .headerTopRight .glyphicon{
 	margin-right:14px;
 }
+
 .glyphicon-earphone{
 	transform: rotate(30deg);	
 }
@@ -328,6 +328,18 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover
 	text-align:center;
 	margin:1em 0px 2em 0;	
 }
+.slick-track{
+	margin:0 auto;	
+}
+.slick-initialized .slick-slide {
+    outline: none;
+}
+.slick-next{
+	right:0px;	
+}
+.slick-prev{
+	left:0px;	
+}
 .mdBoxContent{
 	max-width:258px;
 	min-height:290px;	
@@ -343,17 +355,6 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover
 	font-weight:500;	
 	font-size:1em;
 }
-.carousel-control.left, .carousel-control.right {
-	background-image:none;	
-}
-#carousel-services .row, #carousel-partners .row, #usp .row{
-	text-align:center;
-}
-#carousel-services .col, #carousel-partners .col, #usp .col{
-	float:none;
-	display:inline-block;	
-}
-
 /* === LOCATION  === */
 #location{
 	padding:1.5em 0px;	
@@ -387,6 +388,7 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover
 .partnersContent{
 	max-width:180px;
 	height:80px;	
+	margin: 0 auto;
 }
 
 /* === FOOTER  === */
@@ -443,6 +445,10 @@ footer, .footerContent h3{
 }
 #usp .container{
 	padding:0 120px;
+}
+#usp .row{
+	margin-left:0px;
+	margin-right:0px;	
 }
 #listItems{
 	padding-top:20px;
@@ -501,7 +507,7 @@ footer, .footerContent h3{
 	margin-right:10px;
 }
 .flexslider-custom-2, .flexslider-custom-2#slider ul.slides li, .flexslider-custom-2 .flex-viewport{
-	width: 631px;	
+	max-width: 631px;	
 }
 .flexslider-custom-2#slider ul.slides li{
 	position:relative;	
@@ -597,6 +603,9 @@ footer, .footerContent h3{
 	font-weight:500;	
 	font-size:1em;
 }
+.lgBoxContent .wp-post-image{
+	width:100%;	
+}
 .thumbHighlightText{
 	min-width:140px;
 	min-height:34px;
@@ -612,7 +621,9 @@ footer, .footerContent h3{
 }
 /*Projects navbar*/
 .projectsNavbar{
-	min-height:64px;	
+    min-height: 64px;
+    margin-left: 10px;
+    margin-right: 10px;	
 }
 #projectsCategoriesCollapse{
 	padding-left:0px;
@@ -624,22 +635,6 @@ footer, .footerContent h3{
 .single-projects h1{
 	margin-bottom:30px;	
 }
-#loading-animation{
-    display: none;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    opacity: 0.3;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-#loading-animation img{
-    left: 50%;
-    position: absolute;
-    top: 50%;
-}
-
 #category-menu a{
 	cursor:pointer;	
 }
@@ -689,7 +684,7 @@ body{
 .navbar-brand{
     width: 70%;
 }
-.menu-main-menu-container {
+footer{
     width: 100%;
     float: none;
     text-align: center;
@@ -802,9 +797,7 @@ body{
 #contactAddress{
 	margin-bottom:20px;	
 }
-#carousel-services .col{
-	max-width: 100%;
-}
+
 
 /* === USP  === */
 #usp{
@@ -847,20 +840,12 @@ body{
 #bannerTitle{
 	width:911px;	
 }
-.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
-    margin-right: -125px;
-}
-.carousel-control .glyphicon-chevron-left, .carousel-control .icon-next {
-    margin-left: -125px;
-}
-#carousel-services .col{
-	max-width: 258px;
-}
-#carousel-partners .col{
-	max-width: 180px;
-}
 #usp .col{
 	max-width: 230px;	
+}
+#headerNavMenu .menu-main-menu-container{
+	float:right;
+	
 }
 /*********************************
 ** BLOG PAGE
@@ -872,4 +857,19 @@ body{
 	float:right;	
 }
 
+}
+
+/*Shuffle css*/
+#grid {margin-left:-5px;margin-right:-5px;position:relative; overflow: hidden;}
+#grid [class*="col-"] {padding:5px;}
+
+@media (max-width:320px) {
+#grid [class*="col-"] {width:100%;}
+}
+
+
+.shuffle_sizer {
+position: absolute;
+opacity: 0;
+visibility: hidden;
 }

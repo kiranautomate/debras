@@ -2,7 +2,7 @@
                             	
                                 <?php if( get_option('db_contact_form') != "" ): ?>
                                 
-                                <section id="customContactForm" class="secondaryBackgroundColor">
+                                <section id="customContactForm" class="lightGreyBack">
 									<h4>Neem contact met ons op</h4>
 									<?php  $contact_form_sc = get_option('db_contact_form');;?>
                             		<?php  echo do_shortcode($contact_form_sc); ?>

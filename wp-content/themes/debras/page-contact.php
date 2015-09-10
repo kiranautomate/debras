@@ -89,10 +89,10 @@
                     <?php if( get_option('db_contact_form') != "" ): ?>
                                         
                     <div class="col col-lg-9">
-                    	<section id="customContactForm" class="secondaryBackgroundColor pullCenter">
+                    	<section id="customContactForm" class="lightGreyBack pullCenter">
                             <h4>Contactformulier</h4>
                             <?php  $contact_form_sc = get_option('db_contact_form');;?>
-                            <?php  echo do_shortcode($contact_form_sc); ?>
+                            <?php  echo do_shortcode('[contact-form-7 id="73" title="Contact form 1"]'); ?>
                         </section>
                     </div>
                     

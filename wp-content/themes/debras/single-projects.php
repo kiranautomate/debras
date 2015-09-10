@@ -92,13 +92,13 @@
                             
                         </div>
                         
-                        <div class="row singleProjectNav secondaryBackgroundColor secondaryContentColor">
+                        <div class="row singleProjectNav lightGreyBack secondaryContentColor">
                         	<div class="col col-xs-3">
-                            	<a href=""><span class="glyphicon glyphicon-th-large secondaryContentColor largeIcon"></span></a>
+                            	<span class="glyphicon glyphicon-th-large secondaryContentColor largeIcon"></span>
                                 <p>Bekijk alle projecten</p>
                             </div>
                             <div class="col col-xs-3">
-                            	<a href=""><span class="glyphicon glyphicon-chevron-left secondaryContentColor largeIcon"></span></a>
+                            	<span class="glyphicon glyphicon-chevron-left secondaryContentColor largeIcon"></span>
                                  <p><?php previous_post_link('%link', 'Vorige project', false); ?></p>
                             </div>
                             <div class="col col-xs-3">

@@ -21,39 +21,41 @@
 
         </section>
     
+        
+        <?php if( get_field('primary_content_body') != "" ||  get_field('secondary_content_body') != "" ): ?>
         <!-- CONTENT SECTION 
         ============================== -->
         <section id="homeContent">
         	
             <!-- FIRST CONTENT BLOCK -->
             
-            <?php if( get_option('db_home_content_body_primary') != "" ): ?>
+            <?php if( get_field('primary_content_body') != "" ): ?>
             
             <div class="container">
                 
-                <?php if( get_option('db_home_content_title_primary') != "" ): ?>
+                <?php if( get_field('primary_content_title') != "" ): ?>
                 
                 <h1 class="homeContentTitle">
-                    <?php echo get_option('db_home_content_title_primary'); ?>
+                    <?php echo get_field('primary_content_title'); ?>
                 </h1>
                 
                 <?php endif; ?>
                 
                 <div class="homeContentText contentColorDark">
-                    <?php echo get_option('db_home_content_body_primary'); ?>
+                    <?php echo get_field('primary_content_body'); ?>
                 </div>
                 
                 <div class="homeContentButton">
                 
-                	<?php if( get_option('db_home_content_button1_primary') != "" ): ?>
+                	<?php if( get_field('primary_content_button_one') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button1_primary'); ?>" class="btn btn-md secondaryBtnColor primaryLightColor">
+                    <input type="button" value="<?php echo get_field('primary_content_button_one'); ?>" class="btn btn-md secondaryBtnColor primaryLightColor">
                     
                     <?php endif; ?>
                     
-                    <?php if( get_option('db_home_content_button2_primary') != "" ): ?>
+                    <?php if( get_field('primary_content_button_two') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button2_primary'); ?>" class="btn btn-md primaryBackgroundColor primaryLightColor">
+                    <input type="button" value="<?php echo get_field('primary_content_button_two'); ?>" class="btn btn-md primaryBackgroundColor primaryLightColor">
                     
                     <?php endif; ?>
                     
@@ -65,33 +67,33 @@
 
 			<!-- SECOND CONTENT BLOCK -->
 
-            <?php if( get_option('db_home_content_body_secondary') != "" ): ?>
+            <?php if( get_field('secondary_content_body') != "" ): ?>
             
             <div class="container">
                 
-                <?php if( get_option('db_home_content_title_secondary') != "" ): ?>
+                <?php if( get_field('secondary_content_title') != "" ): ?>
                 
                 <h1 class="homeContentTitle">
-                    <?php echo get_option('db_home_content_title_secondary'); ?>
+                    <?php echo get_field('secondary_content_title'); ?>
                 </h1>
                 
                 <?php endif; ?>
                 
                 <div class="homeContentText contentColorDark">
-                    <?php echo get_option('db_home_content_body_secondary'); ?>
+                    <?php echo get_field('secondary_content_body'); ?>
                 </div>
                 
                 <div class="homeContentButton">
                 
-                	<?php if( get_option('db_home_content_button1_secondary') != "" ): ?>
+                	<?php if( get_field('secondary_content_button_one') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button1_secondary'); ?>" class="btn btn-md secondaryBtnColor primaryLightColor">
+                    <input type="button" value="<?php echo get_field('secondary_content_button_one'); ?>" class="btn btn-md secondaryBtnColor primaryLightColor">
                     
                     <?php endif; ?>
                     
-                    <?php if( get_option('db_home_content_button2_secondary') != "" ): ?>
+                    <?php if( get_field('secondary_content_button_two') != "" ): ?>
                     
-                    <input type="button" value="<?php echo get_option('db_home_content_button2_secondary'); ?>" class="btn btn-md primaryBackgroundColor primaryLightColor">
+                    <input type="button" value="<?php echo get_field('secondary_content_button_two'); ?>" class="btn btn-md primaryBackgroundColor primaryLightColor">
                     
                     <?php endif; ?>
                     
@@ -103,41 +105,31 @@
                         
         </section>
         
+        <?php endif; ?>
+        
         <!-- SERVICES 
         ============================== -->
         <section id="services" class="primaryBackgroundColor">
         	<div class="container">
                 <h3 class="primaryLightColor">Onze diensten</h3>
-                <div id="carousel-services" class="carousel slide" data-ride="carousel">
-
                 
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner" role="listbox">
-                      
+                                    
 					  <?php 
                             $args = array( 'post_type' => 'services');
                             $the_query = new WP_Query( $args );
 							
 							$services_count = 0;
                       ?>
-                      <?php if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); ?>
                       
-                      
-                      <?php if($services_count % 4 == 0 || $services_count == 0) :  ?>
-                      
-                      <div class="item <?php if( $services_count < 4 ) : ?>active <?php endif; ?>">
-                      <div class="row">
-                      
-                      <?php endif; ?>
-                      
-                      <?php
+                      <div class="row responsiveServices">
+                      <?php if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); 
                       
                       $service_image = get_the_post_thumbnail();
                       
                       
                        if( !empty($service_image) ): ?>
                                       
-                            <div class="col col-sm-3 col-xs-6">
+                            <div class="col col-sm-3 col-xs-12">
                                 <div class="mdBoxContent">
                                     <?php echo $service_image ; ?>
                                     
@@ -145,13 +137,8 @@
                                     
                                 </div>
                             </div>
-						<?php $services_count = $the_query->current_post +1; ?>
-                        <?php if($services_count % 4 == 0) :  ?>
-                            
-                            
-                          </div></div>
-                            
-                        <?php endif; ?>
+                        
+                       
 												
                         <?php endif; ?>      
                         
@@ -160,24 +147,14 @@
                       </div><!-- Row -->
                     </div><!-- Item -->
                     
+                    
+                 
                   </div>
                 
-                  <?php if($services_count > 4) : ?>
-                  
-                  <!-- Controls -->
-                  <a class="left carousel-control" href="#carousel-services" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left primaryLightColor" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#carousel-services" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right primaryLightColor" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                  
-                  <?php endif; ?>
                   
                 </div>            
             </div><!-- Continer -->
+                    
         </section>
         
         <!-- LOCATION 
@@ -276,36 +253,17 @@
                     
                     <?php endif; ?>
                 </div>  
-                <div id="carousel-partners" class="carousel slide" data-ride="carousel">
-                	<h3>Partners en referenties</h3>
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner" role="listbox">
+                
+                <!-- Partners carousel section -->
+                <h3>Partners en referenties</h3>
                     
-
-                      
-
-                                      
-                          
-
-                        
+					 <div class="row responsivePartners">
+                     
 					  <?php 
                             $args = array( 'post_type' => 'partners');
                             $the_query = new WP_Query( $args );
-							
-							$partners_count = 0;
-                      ?>
-                      <?php if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); ?>
-                      
-                      
-                      <?php if($partners_count % 5 == 0 || $partners_count == 0) :  ?>
-                      
-                      <div class="item <?php if( $partners_count < 5 ) : ?>active <?php endif; ?>">
-                      <div class="row">
-                      
-                      <?php endif; ?>
-                      
-                      
-                      <?php
+                      		
+							if( have_posts()) : while($the_query->have_posts()) : $the_query->the_post(); 
                       
                       $partner_logo = get_field('partner_logo');
                       $partner_url = get_field('partner_url');
@@ -315,17 +273,10 @@
                        
                         <div class="col col-sm-15 col-xs-4">
                             <div class="partnersContent">
-                                <a href="partner_url"><img src="<?php echo $partner_logo['url']; ?>" alt="<?php echo $partner_logo['alt']; ?>" class="img-responsive" /></a>
+                                <a href="<?php echo $partner_url; ?>" target="_blank"><img src="<?php echo $partner_logo['url']; ?>" alt="<?php echo $partner_logo['alt']; ?>" class="img-responsive" /></a>
                             </div>
                         </div>
                     	
-						<?php $partners_count = $the_query->current_post +1; ?>
-                        <?php if($partners_count % 5 == 0) :  ?>
-                            
-                            
-                          </div></div>
-                            
-                        <?php endif; ?>
 												
                         <?php endif; ?>      
                         

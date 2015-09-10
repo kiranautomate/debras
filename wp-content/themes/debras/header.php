@@ -23,6 +23,11 @@
         
         <link rel="icon" href="<?php echo get_theme_mod( 'wpt_favicon'); ?>" sizes="16x16">
         
+ 
+          <!-- DEMO ONLY :: put the script link here on your LOCAL drive not the full script -->
+
+        
+        
 		<?php endif; ?>
         
         
@@ -66,9 +71,10 @@
             <div class="navbar-wrapper">
             	
                 <div class="container">
-                    <div class="navbar navbar-default " role="navigation">
-                        
-                            <div class="navbar-header">
+                    <div class="navbar navbar-default " role="navigation" id="headerNavMenu">
+                        	
+                            <div class="col-sm-4">
+                            	<div class="navbar-header">
                                 
                                 <?php if( get_theme_mod( 'wpt_logo') != "" && get_option('db_logo') == "" ): ?>
                                     <a class="navbar-brand" href="<?php echo home_url( '/' ); ?>"><img id="logo" src="<?php echo get_theme_mod( 'wpt_logo' ); ?>" alt="Fysio" class="img-responsive"></a>
@@ -86,7 +92,9 @@
                                 </button>
                                 
                             </div><!-- navbar-header -->
-                            <div class="collapse navbar-collapse rightNavbar" id="primaryAnchorColor">
+                            </div>
+                            <div class="col-sm-8">
+                            	<div class="collapse navbar-collapse rightNavbar" id="primaryAnchorColor">
                                   <?php
                                     $args = array(
                                         'menu' => 'header-menu',
@@ -98,6 +106,9 @@
                                   
                                   ?>
                             </div><!-- navbar-collapse -->
+                            </div>
+                            
+                            
                         
                         
                     </div><!-- navbar -->

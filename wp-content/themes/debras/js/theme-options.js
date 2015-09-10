@@ -11,4 +11,3 @@ $('.pickcolor').click( function(e) {
     });
 });
 });
-

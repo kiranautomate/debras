@@ -63,7 +63,7 @@
                                 <div class="mdBoxContent">
                                     <?php echo $service_image; ?>
                                     
-                                    <div class="mdBoxContentTitle" id="secondaryBackgroundColor">
+                                    <div class="mdBoxContentTitle" id="lightGreyBack">
                                     	
                                         <h5><?php the_title(); ?></h5>
                                         
